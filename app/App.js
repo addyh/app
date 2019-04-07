@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import {Provider} from 'react-redux';
 import store from './store';
-import SearchScreen from './components/Screens/SearchScreen';
-import SavedScreen from './components/Screens/SavedScreen';
-import SettingsScreen from './components/Screens/SettingsScreen';
+import HomeScreen from './components/Screens/HomeScreen';
+
 
 export default class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <SearchScreen />
+        <HomeScreen />
       </Provider>
     );
   }
