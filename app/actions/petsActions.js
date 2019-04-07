@@ -110,3 +110,10 @@ export const fetchPets = () => dispatch => {
     });
   }
 }
+
+export const addSavedPet = (pet) => dispatch => {
+  dispatch({
+    type: types.ADD_SAVED_PET,
+    payload: pet
+  });
+}

@@ -16,6 +16,7 @@ import {
   updateAgeMax,
   updateTypePreference
 } from '../../actions/settingsActions';
+import * as colors from '../../styles/colors';
 
 class SettingsScreen extends Component {
   constructor(props) {
@@ -115,8 +116,6 @@ class SettingsScreen extends Component {
   }
 }
 
-const boxBorderColor = '#5086b8';
-const boxBgColor = '#4682b4';
 const boxMargin = 5;
 
 const styles = StyleSheet.create({
@@ -125,17 +124,17 @@ const styles = StyleSheet.create({
   },
   statusBar: {
     height: (Platform.OS === 'ios') ? 36 : 0,
-    backgroundColor: boxBgColor,
+    backgroundColor: colors.boxDark,
   },
   layout: {
     flex: 1,
-    backgroundColor: boxBgColor,
+    backgroundColor: colors.boxDark,
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'stretch',
   },
   box: {
-    backgroundColor: boxBgColor,
+    backgroundColor: colors.boxDark,
     margin: boxMargin,
   },
   box1: {
@@ -158,7 +157,7 @@ const styles = StyleSheet.create({
   profileTextInput: {
     borderColor: 'black',
     borderWidth: 1,
-    backgroundColor: boxBorderColor,
+    backgroundColor: colors.boxMedium,
     height: 300,
     textAlignVertical: 'top',
     fontSize: 24,
@@ -201,7 +200,7 @@ const styles = StyleSheet.create({
   agePreferenceMin: {
     borderColor: 'black',
     borderWidth: 1,
-    backgroundColor: boxBorderColor,
+    backgroundColor: colors.boxMedium,
     height: 50,
     width: 100,
     textAlignVertical: 'top',
@@ -217,7 +216,7 @@ const styles = StyleSheet.create({
   agePreferenceMax: {
     borderColor: 'black',
     borderWidth: 1,
-    backgroundColor: boxBorderColor,
+    backgroundColor: colors.boxMedium,
     height: 50,
     width: 100,
     textAlignVertical: 'top',

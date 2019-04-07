@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {withNavigation} from 'react-navigation';
+import * as colors from '../../styles/colors';
 
 class NavBarBottom extends Component {
   constructor(props) {
@@ -12,7 +13,7 @@ class NavBarBottom extends Component {
     let currentScreen = this.props.navigation.state.routeName;
     if (currentScreen==screen) {
       return {
-        backgroundColor: '#6096c8'
+        backgroundColor: colors.boxLight
       };
     }
   }
@@ -32,7 +33,6 @@ class NavBarBottom extends Component {
       );
   }
 }
-const boxBorderColor = '#5086b8';
 
 const styles = StyleSheet.create({
   navBottom: {

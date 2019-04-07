@@ -8,16 +8,17 @@ import {
   ImageBackground
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
+import * as colors from '../../styles/colors';
 
 export default class SearchScreen extends Component {
   render() {
-    let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg';
+    let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
-              <View style={{backgroundColor:'green'}}>
+              <View style={{backgroundColor:colors.boxLight}}>
                 <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
                 </ImageBackground>
               </View>
@@ -44,9 +45,6 @@ export default class SearchScreen extends Component {
   }
 }
 
-const boxBorderColor = '#5086b8';
-const boxBgColor = '#4682b4';
-//const boxBgColor = '#f9f9f9';
 const boxMargin = 5;
 
 const styles = StyleSheet.create({
@@ -55,7 +53,7 @@ const styles = StyleSheet.create({
   },
   statusBar: {
     height: (Platform.OS === 'ios') ? 36 : 0,
-    backgroundColor: boxBgColor,
+    backgroundColor: colors.boxDark,
   },
   layout: {
     flex: 1,
@@ -63,13 +61,13 @@ const styles = StyleSheet.create({
     //backgroundColor: 'steelblue',
     //backgroundColor: '#5086b8',
     //backgroundColor: 'white',
-    backgroundColor: '#4682b4',
+    backgroundColor: colors.boxDark,
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'stretch',
   },
   box: {
-    backgroundColor: boxBgColor,
+    backgroundColor: colors.boxDark,
     margin: boxMargin,
   },
   box1: {
@@ -95,7 +93,7 @@ const styles = StyleSheet.create({
   },
   petDescription: {
     borderWidth: 1,
-    backgroundColor: boxBorderColor,
+    backgroundColor: colors.boxMedium,
     borderRadius: 0,
     marginLeft: 0,
     marginRight: 0,
