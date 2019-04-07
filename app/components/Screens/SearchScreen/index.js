@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView, Image, ImageBackground} from 'react-native';
+import {Platform, StyleSheet, Text, View, ScrollView, Image, ImageBackground} from 'react-native';
 import NavBarBottom from '../NavBarBottom';
 
 export default class SearchScreen extends Component {
@@ -7,6 +7,7 @@ export default class SearchScreen extends Component {
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg';
     return (
       <View style={styles.container}>
+        <View style={styles.statusBar} />
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
               <View style={{backgroundColor:'green'}}>
@@ -44,6 +45,10 @@ const boxMargin = 5;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  statusBar: {
+    height: (Platform.OS === 'ios') ? 18 : 0,
+    backgroundColor: boxBgColor,
   },
   layout: {
     flex: 1,
