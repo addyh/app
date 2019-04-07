@@ -11,7 +11,8 @@ import {
   NavigationActions
 } from 'react-navigation';
 import {
-  fetchSettings
+  fetchSettings,
+  fetchPets
 } from '../../actions/settingsActions';
 
 const AppNavigator = createStackNavigator(
@@ -39,7 +40,8 @@ class HomeScreen extends Component {
 }
 
 const mapDispatchToProps = {
-  fetchSettings
+  fetchSettings,
+  fetchPets
 }
 
 export default connect(null, mapDispatchToProps)(HomeScreen);
