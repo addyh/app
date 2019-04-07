@@ -94,7 +94,6 @@ const styles = StyleSheet.create({
   statusBar: {
     height: (Platform.OS === 'ios') ? 36 : 0,
     backgroundColor: colors.boxDark,
-    position: 'absolute',
     zIndex: 999,
   },
   layout: {
