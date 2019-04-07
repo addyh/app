@@ -41,6 +41,9 @@ export default class SearchScreen extends Component {
   renderCards() {
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
     return cards.map((item, i) => {
+
+      if (i < )
+
       return (
         <Animated.View
         {...this.PanResponder.panHandlers}
@@ -91,6 +94,7 @@ const styles = StyleSheet.create({
   statusBar: {
     height: (Platform.OS === 'ios') ? 36 : 0,
     backgroundColor: colors.boxDark,
+    position: 'absolute',
   },
   layout: {
     flex: 1,
