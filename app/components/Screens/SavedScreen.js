@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, TouchableOpacity, View, FlatList, ImageBackground} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+  FlatList,
+  ImageBackground
+} from 'react-native';
 import NavBarBottom from './NavBarBottom';
 
 // Row data (hard-coded)
 const rows = [
-  {id: 0, text: 'Fido, 3yr, M'},
-  {id: 1, text: 'Spot, 2yr, M'},
-  {id: 2, text: 'Fluffy, 2yr, F'},
-  {id: 3, text: 'Bear, 3yr, M'},
+  {key: '0', text: 'Fido, 3yr, M'},
+  {key: '1', text: 'Spot, 2yr, M'},
+  {key: '2', text: 'Fluffy, 2yr, F'},
+  {key: '3', text: 'Bear, 3yr, M'},
 ]
 
 class SavedScreen extends Component {
@@ -15,21 +23,22 @@ class SavedScreen extends Component {
     dataSource: rows
   }
 
-  onPress(rowData) {
-    console.log(rowData)
+  onPress(data) {
+    console.log(data)
   }
 
-  renderRow = (rowData) => {
+  renderRow = (row) => {
+    console.log(row.item);
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg';
     return (
-      <TouchableOpacity onPress={() => this.onPress(rowData)}>
+      <TouchableOpacity onPress={() => this.onPress(row)}>
         <View style={styles.row}>
           <View style={styles.petImage}>
           <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}} />
           </View>
           <View style={styles.petDetails}>
-            <Text style={styles.petName}>{rowData.text}</Text>
-            <Text numberOfLines={2} textBreakStrategy='simple' style={styles.petDescription}>A description that is really long blasdbo whtoewho ifhioewhf ioft is really long blasdbo whtoewho ifhioewhf ioft is really long blasdbo whtoewho ifhioewhf iofhewfio hewio fbuoewb </Text>
+            <Text style={styles.petName}>{row.item.text}</Text>
+            <Text numberOfLines={2} textBreakStrategy='simple' style={styles.petDescription}>asdf</Text>
           </View>
         </View>
       </TouchableOpacity>
@@ -44,7 +53,7 @@ class SavedScreen extends Component {
           <View style={[styles.box1, styles.box]}>
             <FlatList
               style={styles.savedList}
-              data={[{key: 'a'}, {key: 'b'}]}
+              data={rows}
               renderItem={this.renderRow}
             />
           </View>

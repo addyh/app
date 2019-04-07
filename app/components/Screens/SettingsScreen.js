@@ -11,7 +11,6 @@ import {
 import ToggleSwitch from 'toggle-switch-react-native';
 import NavBarBottom from './NavBarBottom';
 import {
-  fetchSettings,
   updateProfile,
   updateAgeMin,
   updateAgeMax,
@@ -234,11 +233,11 @@ function mapStateToProps(state) {
     profile: state.settings.profile,
     ageRange: state.settings.ageRange,
     typePreference: state.settings.typePreference,
+    pets: state.pets
   }
 }
 
 const mapDispatchToProps = {
-  fetchSettings,
   updateProfile,
   updateAgeMin,
   updateAgeMax,

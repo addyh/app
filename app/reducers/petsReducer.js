@@ -1,7 +1,8 @@
 import * as types from '../actions/types';
 
 const initialState = {
-  allPets: []
+  allPets: [],
+  savedPets: []
 };
 
 export default function(state=initialState, action) {
@@ -11,6 +12,12 @@ export default function(state=initialState, action) {
       return {
         ...state,
         allPets: action.payload
+      }
+
+    case types.ADD_SAVED_PET:
+      return {
+        ...state,
+        savedPets: [...state.savedPets, action.payload]
       }
 
     default:

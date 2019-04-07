@@ -1,5 +1,12 @@
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View, ScrollView, Image, ImageBackground} from 'react-native';
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  ImageBackground
+} from 'react-native';
 import NavBarBottom from './NavBarBottom';
 
 export default class SearchScreen extends Component {

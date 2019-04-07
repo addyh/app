@@ -4,5 +4,5 @@ import settingsReducer from './settingsReducer';
 
 export default combineReducers({
   pets: petsReducer,
-  settings: settingsReducer
+  settings: settingsReducer,
 });

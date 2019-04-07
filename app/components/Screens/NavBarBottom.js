@@ -1,10 +1,6 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
-import {
-  StackActions,
-  NavigationActions,
-  withNavigation
-} from 'react-navigation';
+import {withNavigation} from 'react-navigation';
 
 class NavBarBottom extends Component {
   constructor(props) {

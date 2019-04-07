@@ -1,19 +1,11 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {StyleSheet, Text, View, Button} from 'react-native';
+import {createAppContainer, createStackNavigator} from 'react-navigation';
 import SearchScreen from './SearchScreen';
 import SavedScreen from './SavedScreen';
 import SettingsScreen from './SettingsScreen';
-import {
-  createAppContainer,
-  createStackNavigator,
-  StackActions,
-  NavigationActions
-} from 'react-navigation';
-import {
-  fetchSettings,
-  fetchPets
-} from '../../actions/settingsActions';
+import {fetchSettings} from '../../actions/settingsActions';
+import {fetchPets} from '../../actions/petsActions';
 
 const AppNavigator = createStackNavigator(
   {
@@ -32,6 +24,7 @@ const AppContainer = createAppContainer(AppNavigator);
 class HomeScreen extends Component {
   componentWillMount() {
     this.props.fetchSettings();
+    this.props.fetchPets();
   }
 
   render() {
