@@ -6,7 +6,8 @@ import {
   View,
   ScrollView,
   ImageBackground,
-  Animated
+  Animated,
+  PanResponder
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
@@ -17,12 +18,34 @@ const cards = [
 ]
 
 export default class SearchScreen extends Component {
+  constructor(props) {
+    super(props);
+
+    this.position = new Animated.ValueXY();
+    this.state = {
+      currentIndex: 0
+    }
+  }
+  componentWillMount() {
+    this.PanResponder = PanResponder.create({
+      onStartShouldSetPanResponder: (evt, gestureState) => true,
+      onPanResponderMove: (evt, gestureState) => {
+        this.position.setValue({x: gestureState.dx, y: gestureState.dy})
+      },
+      onPanResponderRelease: (evt, gestureState) => {
+
+      }
+    })
+  }
 
   renderCards() {
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
     return cards.map((item, i) => {
       return (
-        <Animated.View key={i} style={styles.layout}>
+        <Animated.View
+        {...this.PanResponder.panHandlers}
+        key={i}
+        style={[{transform: this.position.getTranslateTransform()},styles.layout]}>
           <View style={[styles.box1, styles.box]}>
               <View style={{backgroundColor:colors.boxLight}}>
                 <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
@@ -37,7 +60,7 @@ export default class SearchScreen extends Component {
           <View style={[styles.box3, styles.box]}>
             <ScrollView style={styles.petDescription}>
               <Text textBreakStrategy='simple' style={styles.petDescriptionText}>
-              Patronus is a super chatty cat! He loves to be up high on a shelf or cuddling on the couch. He is a Hemmingway (polydactyl) so he does need a little extra care with nail clipping. He has a beautiful red/brown coat and is on a strict wet food diet.
+                {item.text}
               </Text>
             </ScrollView>
           </View>
@@ -46,7 +69,7 @@ export default class SearchScreen extends Component {
           </View>
         </Animated.View>
       );
-    });
+    }).reverse();
   }
 
   render() {
@@ -77,6 +100,7 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
     position: 'absolute',
     height: '100%',
+    width: '100%',
   },
   box: {
     backgroundColor: colors.boxDark,
