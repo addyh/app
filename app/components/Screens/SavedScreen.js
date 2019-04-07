@@ -12,14 +12,6 @@ import {
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
 
-// Row data (hard-coded)
-const rows = [
-  {key: '0', text: 'Fido, 3yr, M'},
-  {key: '1', text: 'Spot, 2yr, M'},
-  {key: '2', text: 'Fluffy, 2yr, F'},
-  {key: '3', text: 'Bear, 3yr, M'},
-]
-
 class SavedScreen extends Component {
   constructor(props) {
     super(props);
@@ -53,7 +45,7 @@ class SavedScreen extends Component {
     );
   }
 
-  showSavedPets() {
+  renderSavedPets() {
     if (this.state.pets.savedPets.length == 0) {
       return(
         <View style={{flex:1,justifyContent:'center'}}>
@@ -81,7 +73,7 @@ class SavedScreen extends Component {
         <View style={styles.statusBar} />
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
-            {this.showSavedPets()}
+            {this.renderSavedPets()}
           </View>
           <View style={[styles.box2, styles.box]}>
             <NavBarBottom />

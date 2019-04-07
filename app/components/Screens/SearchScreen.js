@@ -5,18 +5,24 @@ import {
   Text,
   View,
   ScrollView,
-  ImageBackground
+  ImageBackground,
+  Animated
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
 
+const cards = [
+  { id: "1", text: './assets/1.jpg' },
+  { id: "2", text: './assets/2.jpg' },
+]
+
 export default class SearchScreen extends Component {
-  render() {
+
+  renderCards() {
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
-    return (
-      <View style={styles.container}>
-        <View style={styles.statusBar} />
-        <View style={styles.layout}>
+    return cards.map((item, i) => {
+      return (
+        <Animated.View key={i} style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
               <View style={{backgroundColor:colors.boxLight}}>
                 <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
@@ -33,13 +39,21 @@ export default class SearchScreen extends Component {
               <Text textBreakStrategy='simple' style={styles.petDescriptionText}>
               Patronus is a super chatty cat! He loves to be up high on a shelf or cuddling on the couch. He is a Hemmingway (polydactyl) so he does need a little extra care with nail clipping. He has a beautiful red/brown coat and is on a strict wet food diet.
               </Text>
-
             </ScrollView>
           </View>
           <View style={[styles.box4, styles.box]}>
             <NavBarBottom />
           </View>
-        </View>
+        </Animated.View>
+      );
+    });
+  }
+
+  render() {
+    return (
+      <View style={styles.container}>
+        <View style={styles.statusBar} />
+        {this.renderCards()}
       </View>
     );
   }
@@ -57,14 +71,12 @@ const styles = StyleSheet.create({
   },
   layout: {
     flex: 1,
-    //backgroundColor: '#f5f5f5',
-    //backgroundColor: 'steelblue',
-    //backgroundColor: '#5086b8',
-    //backgroundColor: 'white',
     backgroundColor: colors.boxDark,
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'stretch',
+    position: 'absolute',
+    height: '100%',
   },
   box: {
     backgroundColor: colors.boxDark,

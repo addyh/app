@@ -19,7 +19,7 @@ import {
 import * as colors from '../../styles/colors';
 
 class SettingsScreen extends Component {
-  constructor(props) {
+  constructor(props) { 
     super(props);
     this.state = {
       id: this.props.id,
