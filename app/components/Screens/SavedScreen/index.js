@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Platform, StyleSheet, Text, View} from 'react-native';
 import NavBarBottom from '../NavBarBottom';
 
 class SavedScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.statusBar} />
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
             <Text>saved screen</Text>
@@ -25,6 +26,10 @@ const boxMargin = 5;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  statusBar: {
+    height: (Platform.OS === 'ios') ? 36 : 0,
+    backgroundColor: boxBgColor,
   },
   layout: {
     flex: 1,

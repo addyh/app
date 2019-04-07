@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, TextInput, View, ScrollView, Switch} from 'react-native';
+import {Platform, StyleSheet, Text, TextInput, View, ScrollView, Switch} from 'react-native';
 import ToggleSwitch from 'toggle-switch-react-native';
 import NavBarBottom from '../NavBarBottom';
 
@@ -19,6 +19,7 @@ class SettingsScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <View style={styles.statusBar} />
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
             <ScrollView style={styles.settings}>
@@ -71,6 +72,10 @@ const boxMargin = 5;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  statusBar: {
+    height: (Platform.OS === 'ios') ? 36 : 0,
+    backgroundColor: boxBgColor,
   },
   layout: {
     flex: 1,
