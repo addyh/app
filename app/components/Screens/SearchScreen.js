@@ -42,7 +42,7 @@ export default class SearchScreen extends Component {
     let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
     return cards.map((item, i) => {
 
-      if (i < )
+     // if (i < )
 
       return (
         <Animated.View
