@@ -1,19 +1,18 @@
 import React, {Component} from 'react';
-import {StyleSheet, Text, View, ScrollView, ImageBackground} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, Image, ImageBackground} from 'react-native';
 import NavBarBottom from '../NavBarBottom';
 
 export default class SearchScreen extends Component {
   render() {
+    let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg';
     return (
       <View style={styles.container}>
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
-            <View>
-              <ImageBackground source={{uri: 'https://facebook.github.io/react-native/docs/assets/favicon.png'}} style={{width: '100%', height: '100%'}}>
-                <Text>Inside</Text>
-              </ImageBackground>
-
-            </View>
+              <View style={{backgroundColor:'green'}}>
+                <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
+                </ImageBackground>
+              </View>
           </View>
           <View style={[styles.box2, styles.box]}>
             <View style={styles.petTitle}>
@@ -37,9 +36,10 @@ export default class SearchScreen extends Component {
   }
 }
 
-const cardBgColor = '#4682b4';
-//const cardBgColor = '#f9f9f9';
-const cardMargin = 5;
+const boxBorderColor = '#5086b8';
+const boxBgColor = '#4682b4';
+//const boxBgColor = '#f9f9f9';
+const boxMargin = 5;
 
 const styles = StyleSheet.create({
   container: {
@@ -50,24 +50,24 @@ const styles = StyleSheet.create({
     //backgroundColor: '#f5f5f5',
     //backgroundColor: 'steelblue',
     //backgroundColor: '#5086b8',
-    backgroundColor: 'white',
-    //backgroundColor: '#4682b4',
+    //backgroundColor: 'white',
+    backgroundColor: '#4682b4',
     flexDirection: 'column',
     justifyContent: 'flex-end',
     alignItems: 'stretch',
   },
   box: {
-    backgroundColor: cardBgColor,
-    margin: cardMargin,
+    backgroundColor: boxBgColor,
+    margin: boxMargin,
   },
   box1: {
-    flex: 4,
+    flex: 8,
   },
   box2: {
     flex: 1,
   },
   box3: {
-    flex: 3,
+    flex: 4,
   },
   box4: {
     flex: 1,
@@ -78,17 +78,18 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   petTitleText: {
+    fontWeight: 'bold',
     fontSize: 32,
   },
   petDescription: {
-    borderWidth: 5,
-    borderColor: '#5086b8',
-    borderRadius: 10,
-    marginLeft: 20,
-    marginRight: 20,
+    borderWidth: 1,
+    backgroundColor: boxBorderColor,
+    borderRadius: 0,
+    marginLeft: 0,
+    marginRight: 0,
   },
   petDescriptionText: {
     fontSize: 24,
-    padding: 20,
+    padding: 5,
   },
 });

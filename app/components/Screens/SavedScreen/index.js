@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import NavBarBottom from '../NavBarBottom';
 
-export default class SavedScreen extends Component {
+class SavedScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
@@ -19,8 +19,8 @@ export default class SavedScreen extends Component {
   }
 }
 
-const cardBgColor = 'steelblue';
-const cardMargin = 5;
+const boxBgColor = 'steelblue';
+const boxMargin = 5;
 
 const styles = StyleSheet.create({
   container: {
@@ -34,13 +34,15 @@ const styles = StyleSheet.create({
     alignItems: 'stretch',
   },
   box: {
-    backgroundColor: cardBgColor,
-    margin: cardMargin,
+    backgroundColor: boxBgColor,
+    margin: boxMargin,
   },
   box1: {
-    flex: 8,
+    flex: 13,
   },
   box2: {
     flex: 1,
   },
 });
+
+export default SavedScreen;
