@@ -19,7 +19,6 @@ const AppNavigator = createStackNavigator(
   },
   {
     initialRouteName: 'Search',
-    headerMode: 'none'
   }
 );
 
