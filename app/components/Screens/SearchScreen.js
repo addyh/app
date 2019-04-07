@@ -95,6 +95,7 @@ const styles = StyleSheet.create({
     height: (Platform.OS === 'ios') ? 36 : 0,
     backgroundColor: colors.boxDark,
     position: 'absolute',
+    zIndex: 999,
   },
   layout: {
     flex: 1,
