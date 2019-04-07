@@ -1,14 +1,14 @@
 import * as types from './types';
 
 export const fetchSettings = () => dispatch => {
-  if (0) {
+  if (1) {
     fetch('https://s3-us-west-2.amazonaws.com/cozi-interview-dev/settings.json')
     .then(res => res.json())
     .then(res => ({
       id: res.id,
       profile: res.profile,
-      ageRange: {min: res.ageRange.min.toString(),
-                max: res.ageRange.max.toString()},
+      ageRange: {min: res.ageRange.min,
+                max: res.ageRange.max},
       typePreference: res.typePreference
     })).then(data => {
       dispatch({
@@ -52,5 +52,12 @@ export const updateAgeMax = (age) => dispatch => {
   dispatch({
     type: types.UPDATE_AGE_MAX,
     payload: age
+  });
+}
+
+export const updateTypePreference = (pref) => dispatch => {
+  dispatch({
+    type: types.UPDATE_TYPE_PREFERENCE,
+    payload: pref
   });
 }

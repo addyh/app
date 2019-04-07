@@ -12,6 +12,7 @@ export default function(state=initialState, action) {
 
     case types.FETCH_SETTINGS:
       return {
+        ...state,
         id: action.payload.id,
         profile: action.payload.profile,
         ageRange: action.payload.ageRange,
@@ -27,13 +28,19 @@ export default function(state=initialState, action) {
     case types.UPDATE_AGE_MIN:
       return {
         ...state,
-        ageRange: {min: action.payload}
+        ageRange: {...state.ageRange, min: action.payload}
       }
 
     case types.UPDATE_AGE_MAX:
       return {
         ...state,
-        ageRange: {max: action.payload}
+        ageRange: {...state.ageRange, max: action.payload}
+      }
+
+    case types.UPDATE_TYPE_PREFERENCE:
+      return {
+        ...state,
+        typePreference: action.payload
       }
 
     default:
