@@ -10,15 +10,7 @@ class NavBarBottom extends Component {
   render() {
     return (
       <View style={styles.navBottom}>
-        <Text style={styles.navBottomText}
-          onPress={() => this.props.navigation.navigate('Search')}>Search</Text>
-        <Text style={styles.navBottomText}> | </Text>
-        <Text style={styles.navBottomText}
-          onPress={() => this.props.navigation.navigate('Saved')}>Saved</Text>
-        <Text style={styles.navBottomText}> | </Text>
-        <Text style={styles.navBottomText}
-          onPress={() => this.props.navigation.navigate('Settings')}>Settings</Text>
-      </View>
+</View>
       );
   }
 }
@@ -35,4 +27,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default withNavigation(NavBarBottom);
+export default NavBarBottom;
