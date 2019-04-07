@@ -8,7 +8,7 @@ export default class SearchScreen extends Component {
       <View style={styles.container}>
         <View style={styles.layout}>
           <View style={[styles.box1, styles.box]}>
-            <Text>Hello</Text>
+            <Text>search screen</Text>
           </View>
           <View style={[styles.box2, styles.box]}>
             <Text>Hello</Text>
