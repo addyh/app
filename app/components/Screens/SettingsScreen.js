@@ -82,8 +82,8 @@ class SettingsScreen extends Component {
                 <Text style={styles.catPreferenceText}>Cat</Text>
                 <View style={styles.animalPreferenceToggle}>
                   <ToggleSwitch
-                    onColor='#e5e5e5'
-                    offColor='#e5e5e5'
+                    onColor={colors.toggleSwitch}
+                    offColor={colors.toggleSwitch}
                     size='large'
                     isOn={this.getTypePreferenceBool()}
                     onToggle={isOn => this.onToggle(isOn)}
@@ -174,7 +174,7 @@ const styles = StyleSheet.create({
   },
   animalPreference: {
     flexDirection: 'row',
-    padding: 10
+    paddingLeft: 10,
   },
   animalPreferenceLabel: {
     textAlignVertical: 'center',
@@ -195,8 +195,8 @@ const styles = StyleSheet.create({
   },
   agePreference: {
     flexDirection: 'row',
+    paddingTop: 20,
     paddingLeft: 10,
-    paddingTop: 10,
   },
   agePreferenceLabel: {
     textAlignVertical: 'center',
@@ -206,29 +206,31 @@ const styles = StyleSheet.create({
   agePreferenceMin: {
     borderColor: 'black',
     borderWidth: 1,
+    borderRadius: 10,
     backgroundColor: colors.boxMedium,
     height: 50,
     width: 100,
     textAlignVertical: 'top',
     fontSize: 24,
     padding: 10,
-    marginRight: 20,
+    marginRight: 10,
   },
   agePreferenceTo: {
     textAlignVertical: 'center',
     fontSize: 24,
-    marginRight: 20,
+    marginRight: 10,
   },
   agePreferenceMax: {
     borderColor: 'black',
     borderWidth: 1,
+    borderRadius: 10,
     backgroundColor: colors.boxMedium,
     height: 50,
     width: 100,
     textAlignVertical: 'top',
     fontSize: 24,
     padding: 10,
-    marginRight: 20,
+    marginRight: 45,
   },
 });
 
