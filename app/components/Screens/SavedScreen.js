@@ -142,8 +142,6 @@ class SavedScreen extends Component {
   }
 }
 
-const boxMargin = 5;
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -161,7 +159,7 @@ const styles = StyleSheet.create({
   },
   box: {
     backgroundColor: colors.boxDark,
-    margin: boxMargin,
+    margin: 5,
   },
   box1: {
     flex: 13,
@@ -171,7 +169,6 @@ const styles = StyleSheet.create({
   },
   row: {
     padding: 5,
-    margin: 5,
     backgroundColor: colors.boxLight,
     flexDirection: 'row',
   },

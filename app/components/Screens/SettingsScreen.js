@@ -174,6 +174,7 @@ const styles = StyleSheet.create({
   },
   animalPreference: {
     flexDirection: 'row',
+    padding: 10
   },
   animalPreferenceLabel: {
     textAlignVertical: 'center',
@@ -194,7 +195,8 @@ const styles = StyleSheet.create({
   },
   agePreference: {
     flexDirection: 'row',
-    paddingTop: 20,
+    paddingLeft: 10,
+    paddingTop: 10,
   },
   agePreferenceLabel: {
     textAlignVertical: 'center',
