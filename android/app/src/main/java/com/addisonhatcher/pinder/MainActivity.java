@@ -1,4 +1,4 @@
-package com.pinder;
+package com.addisonhatcher.pinder;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

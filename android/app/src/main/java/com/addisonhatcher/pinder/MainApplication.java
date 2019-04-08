@@ -1,4 +1,4 @@
-package com.pinder;
+package com.addisonhatcher.pinder;
 
 import android.app.Application;
 
