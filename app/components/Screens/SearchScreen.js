@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import {
   Platform,
   StyleSheet,
@@ -12,20 +13,22 @@ import {
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
-const SCREEN_HEIGHT = Dimensions.get('window').height
-const SCREEN_WIDTH = Dimensions.get('window').width
+import {
+  addSavedPet
+} from '../../actions/petsActions';
 
-const cards = [
-  { id: "1", text: './assets/1.jpg' },
-  { id: "2", text: './assets/2.jpg' },
-]
+const SCREEN_HEIGHT = Dimensions.get('window').height;
+const SCREEN_WIDTH = Dimensions.get('window').width;
 
-export default class SearchScreen extends Component {
+class SearchScreen extends Component {
   constructor(props) {
     super(props);
 
     this.position = new Animated.ValueXY();
     this.state = {
+      pets: this.props.pets,
+      settings: this.props.settings,
+      filteredPets: this.getFilteredPets(this.props),
       currentIndex: 0
     }
     this.rotate = this.position.x.interpolate({
@@ -62,6 +65,43 @@ export default class SearchScreen extends Component {
     });
   }
 
+  getFilteredPets(props) {
+    let settings = props ? props.settings : this.state.settings;
+    let allPets = props ? props.pets.allPets : this.state.pets.allPets;
+    let savedPets = props ? props.pets.savedPets : this.state.pets.savedPets;
+
+    let savedPetIds = [];
+    for (let savedPet of savedPets) {
+      savedPetIds.push(savedPet.id);
+    }
+
+    let pets = [];
+    for (let pet of allPets) {
+      if (!savedPetIds.includes(pet.id) &&
+          pet.type == settings.typePreference &&
+          pet.age >= settings.ageRange.min &&
+          pet.age <= settings.ageRange.max) {
+            pets.push(pet);
+      }
+    }
+    return pets;
+  }
+
+  getCurrentPetDescription() {
+    let pets =  this.state.filteredPets;
+    return pets[this.state.currentIndex]?
+    pets[this.state.currentIndex].profile:'';
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      pets: nextProps.pets,
+      settings: nextProps.settings,
+      filteredPets: this.getFilteredPets(nextProps),
+      currentIndex: 0,
+    })
+  }
+
   componentWillMount() {
     this.PanResponder = PanResponder.create({
       onStartShouldSetPanResponder: (evt, gestureState) => true,
@@ -69,24 +109,28 @@ export default class SearchScreen extends Component {
         this.position.setValue({x: gestureState.dx, y: gestureState.dy})
       },
       onPanResponderRelease: (evt, gestureState) => {
+        // Swiping Right
         if (gestureState.dx > 120) {
-          Animated.spring(this.position, {
-            toValue: {x: SCREEN_WIDTH+100, y: gestureState.dy}
+          Animated.timing(this.position, {
+            toValue: { x: SCREEN_WIDTH + 100, y: gestureState.dy },
+            duration: 100
           }).start(() => {
-            this.setState({currentIndex: this.state.currentIndex+1}, () => {
-              this.position.setValue({x:0, y:0})
-            })
+            this.props.addSavedPet(this.state.filteredPets[this.state.currentIndex]);
+            this.position.setValue({ x: 0, y: 0 })
           })
         }
+        // Swiping Left
         else if (gestureState.dx < -120) {
-          Animated.spring(this.position, {
-            toValue: {x: -SCREEN_WIDTH-100, y: gestureState.dy}
+          Animated.timing(this.position, {
+            toValue: { x: -SCREEN_WIDTH - 100, y: gestureState.dy },
+            duration:100
           }).start(() => {
-            this.setState({currentIndex: this.state.currentIndex+1}, () => {
-              this.position.setValue({x:0, y:0})
+            this.setState({ currentIndex: this.state.currentIndex + 1 }, () => {
+              this.position.setValue({ x: 0, y: 0 })
             })
           })
         }
+        // Rebounding / Null swipe
         else {
           Animated.spring(this.position, {
             toValue: {x:0, y:0},
@@ -98,21 +142,21 @@ export default class SearchScreen extends Component {
   }
 
   renderCards() {
-    let petUri = 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/riley.jpg';
-    return cards.map((item, i) => {
+    return this.state.filteredPets.map((item, i) => {
 
       if (i < this.state.currentIndex) {
         return null;
       }
       else if (i == this.state.currentIndex) {
+        // Current card
         return (
           <Animated.View
           {...this.PanResponder.panHandlers}
           key={i}
           style={[this.rotateAndTranslate, styles.layout]}>
-            <View style={[styles.box1, styles.box]}>
+            <View style={[styles.boxA1, styles.box]}>
                 <View style={{backgroundColor:colors.boxLight}}>
-                  <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
+                  <ImageBackground source={{uri: item.img}} style={{width: '100%', height: '100%'}}>
                     <Animated.View style={[{opacity: this.likeOpacity}, styles.cardViewLike]}>
                       <Text style={styles.cardLike}>LIKE</Text>
                     </Animated.View>
@@ -122,49 +166,30 @@ export default class SearchScreen extends Component {
                   </ImageBackground>
                 </View>
             </View>
-            <View style={[styles.box2, styles.box]}>
+            <View style={[styles.boxA2, styles.box]}>
               <View style={styles.petTitle}>
-                <Text style={styles.petTitleText}>Fido, 3yr, M</Text>
+                <Text style={styles.petTitleText}>{item.name}, {item.age}yr, {item.sex}</Text>
               </View>
-            </View>
-            <View style={[styles.box3, styles.box]}>
-              <ScrollView style={styles.petDescription}>
-                <Text textBreakStrategy='simple' style={styles.petDescriptionText}>
-                  {item.text}
-                </Text>
-              </ScrollView>
-            </View>
-            <View style={[styles.box4, styles.box]}>
-              <NavBarBottom />
             </View>
           </Animated.View>
         );
       }
       else {
+        // Next card
         return (
           <Animated.View
           key={i}
-          style={[{opacity: this.nextCardOpacity, transform: [{scale: this.nextCardScale}]}, styles.layout]}>
-            <View style={[styles.box1, styles.box]}>
-                <View style={{backgroundColor:colors.boxLight}}>
-                  <ImageBackground source={{uri: petUri}} style={{width: '100%', height: '100%'}}>
+          style={[{ transform: [{scale: this.nextCardScale}]}, styles.layout]}>
+            <View style={[styles.boxA1, styles.box]}>
+                <Animated.View style={{opacity: this.nextCardOpacity,backgroundColor:colors.boxLight}}>
+                  <ImageBackground source={{uri: item.img}} style={{width: '100%', height: '100%'}}>
                   </ImageBackground>
-                </View>
+                </Animated.View>
             </View>
-            <View style={[styles.box2, styles.box]}>
+            <View style={[styles.boxA2, styles.box]}>
               <View style={styles.petTitle}>
-                <Text style={styles.petTitleText}>Fido, 3yr, M</Text>
+                <Text style={styles.petTitleText}>{item.name}, {item.age}yr, {item.sex}</Text>
               </View>
-            </View>
-            <View style={[styles.box3, styles.box]}>
-              <ScrollView style={styles.petDescription}>
-                <Text textBreakStrategy='simple' style={styles.petDescriptionText}>
-                  {item.text}
-                </Text>
-              </ScrollView>
-            </View>
-            <View style={[styles.box4, styles.box]}>
-              <NavBarBottom />
             </View>
           </Animated.View>
         );
@@ -173,10 +198,26 @@ export default class SearchScreen extends Component {
   }
 
   render() {
+    // console.log('search',this.props);
+    // console.log('search',this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />
+        <View style={styles.boxA}>
         {this.renderCards()}
+        </View>
+        <View style={styles.boxB}>
+          <View style={[styles.boxB1, styles.box]}>
+            <ScrollView style={styles.petDescription}>
+              <Text textBreakStrategy='simple' style={styles.petDescriptionText}>
+                {this.getCurrentPetDescription()}
+              </Text>
+            </ScrollView>
+          </View>
+          <View style={[styles.boxB2, styles.box]}>
+            <NavBarBottom />
+          </View>
+        </View>
       </View>
     );
   }
@@ -187,6 +228,7 @@ const boxMargin = 5;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.boxDark,
   },
   statusBar: {
     height: (Platform.OS === 'ios') ? 36 : 0,
@@ -204,25 +246,31 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   box: {
-    backgroundColor: colors.boxDark,
+    //backgroundColor: colors.boxDark,
     margin: boxMargin,
   },
-  box1: {
+  boxA: {
+    flex: 7,
+  },
+  boxA1: {
+    flex: 15,
+  },
+  boxA2: {
+    flex: 1,
+  },
+  boxB: {
+    flex: 3,
+  },
+  boxB1: {
     flex: 8,
   },
-  box2: {
-    flex: 1,
-  },
-  box3: {
-    flex: 4,
-  },
-  box4: {
-    flex: 1,
+  boxB2: {
+    flex: 2,
   },
   cardViewLike: {
     transform: [{rotate: '-30deg'}],
     position: 'absolute',
-    top: 50,
+    top: 150,
     left: 40,
     zIndex: 999,
   },
@@ -231,14 +279,14 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: 'green',
     color: 'green',
-    fontSize: 32,
+    fontSize: 82,
     fontWeight: 'bold',
     padding: 10,
   },
   cardViewDislike: {
     transform: [{rotate: '30deg'}],
     position: 'absolute',
-    top: 50,
+    top: 150,
     right: 40,
     zIndex: 999,
   },
@@ -247,7 +295,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: 'red',
     color: 'red',
-    fontSize: 32,
+    fontSize: 82,
     fontWeight: 'bold',
     padding: 10,
   },
@@ -268,7 +316,20 @@ const styles = StyleSheet.create({
     marginRight: 0,
   },
   petDescriptionText: {
-    fontSize: 24,
+    fontSize: 22,
     padding: 5,
   },
 });
+
+function mapStateToProps(state) {
+  return {
+    pets: state.pets,
+    settings: state.settings
+  }
+}
+
+const mapDispatchToProps = {
+  addSavedPet
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

@@ -16,8 +16,16 @@ class SavedScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pets: this.props.pets
+      pets: this.props.pets,
+      settings: this.props.settings
     }
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      pets: nextProps.pets,
+      settings: nextProps.settings
+    })
   }
 
   onPress(data) {
@@ -50,8 +58,9 @@ class SavedScreen extends Component {
       return(
         <View style={{flex:1,justifyContent:'center'}}>
         <View style={{alignItems:'center'}}>
-          <Text style={{fontSize:28,fontWeight:'bold'}}>You have no pets saved.</Text>
-          <Text style={{fontSize:20,}}>Go to Search and swipe right (&#8658;) to add some!</Text>
+          <Text style={{fontSize:32,fontWeight:'bold',paddingBottom:20}}>You have no pets saved.</Text>
+          <Text style={{fontSize:20}}>Go to Search and swipe right (&#8658;)</Text>
+          <Text style={{fontSize:20}}>on a photo to add some!</Text>
         </View>
         </View>
       );
@@ -68,6 +77,8 @@ class SavedScreen extends Component {
   }
 
   render() {
+    // console.log('saved',this.props);
+    // console.log('saved',this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />
@@ -140,7 +151,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    pets: state.pets
+    pets: state.pets,
+    settings: state.settings
   }
 }
 

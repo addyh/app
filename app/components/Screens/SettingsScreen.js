@@ -22,20 +22,22 @@ class SettingsScreen extends Component {
   constructor(props) { 
     super(props);
     this.state = {
-      id: this.props.id,
-      profile: this.props.profile,
-      ageRange: this.props.ageRange,
-      typePreference: this.props.typePreference,
+      pets: this.props.pets,
+      id: this.props.settings.id,
+      profile: this.props.settings.profile,
+      ageRange: this.props.settings.ageRange,
+      typePreference: this.props.settings.typePreference,
     };
     this.onToggle = this.onToggle.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      id: nextProps.id,
-      profile: nextProps.profile,
-      ageRange: nextProps.ageRange,
-      typePreference: nextProps.typePreference
+      pets: nextProps.pets,
+      id: nextProps.settings.id,
+      profile: nextProps.settings.profile,
+      ageRange: nextProps.settings.ageRange,
+      typePreference: nextProps.settings.typePreference
     });
   }
 
@@ -57,8 +59,8 @@ class SettingsScreen extends Component {
   }
 
   render() {
-    console.log(this.props);
-    console.log(this.state);
+    // console.log('setting',this.props);
+    // console.log('setting',this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />
@@ -228,11 +230,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    id: state.settings.id,
-    profile: state.settings.profile,
-    ageRange: state.settings.ageRange,
-    typePreference: state.settings.typePreference,
-    pets: state.pets
+    pets: state.pets,
+    settings: state.settings
   }
 }
 

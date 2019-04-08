@@ -2,7 +2,7 @@ import * as types from '../actions/types';
 
 const initialState = {
   allPets: [],
-  savedPets: []
+  savedPets: [],
 };
 
 export default function(state=initialState, action) {
