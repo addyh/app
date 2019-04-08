@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
+import * as colors from '../../styles/colors';
 
 class PetInfoModal extends Component {
+
   static navigationOptions = ({ navigation }) => ({
     title: navigation.getParam('name'),
+    headerStyle: {
+      backgroundColor: colors.boxDark
+    }
   });
 
   render() {
@@ -22,9 +27,11 @@ class PetInfoModal extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: colors.boxMedium,
   },
   paragraph: {
-
+    flex: 1,
+    padding: 20,
   },
 });
 
