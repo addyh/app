@@ -256,8 +256,6 @@ class SearchScreen extends Component {
   }
 
   render() {
-    // console.log('search',this.props);
-    // console.log('search',this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />

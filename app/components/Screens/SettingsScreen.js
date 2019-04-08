@@ -59,8 +59,6 @@ class SettingsScreen extends Component {
   }
 
   render() {
-    // console.log('setting',this.props);
-    // console.log('setting',this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />

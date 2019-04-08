@@ -110,9 +110,7 @@ class SavedScreen extends Component {
     }
   }
 
-  render() {
-    // console.log('saved',this.props);
-    // console.log('saved',this.state);
+  render() 
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />
