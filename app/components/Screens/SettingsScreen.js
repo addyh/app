@@ -31,6 +31,10 @@ class SettingsScreen extends Component {
     this.onToggle = this.onToggle.bind(this);
   }
 
+  static navigationOptions = {
+    header: <View />
+  }
+
   componentWillReceiveProps(nextProps) {
     this.setState({
       pets: nextProps.pets,

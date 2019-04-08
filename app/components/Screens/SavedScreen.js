@@ -9,6 +9,7 @@ import {
   FlatList,
   ImageBackground
 } from 'react-native';
+import {withNavigation} from 'react-navigation';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
 
@@ -20,6 +21,10 @@ class SavedScreen extends Component {
       settings: this.props.settings,
       filteredPets: this.getFilteredPets(this.props)
     }
+  }
+
+  static navigationOptions = {
+    header: <View />
   }
 
   componentWillReceiveProps(nextProps) {
@@ -36,29 +41,39 @@ class SavedScreen extends Component {
 
     return savedPets;
 
-    let pets = [];
-    for (let pet of savedPets) {
-      if (pet.type == settings.typePreference &&
-          pet.age >= settings.ageRange.min &&
-          pet.age <= settings.ageRange.max) {
-            pets.push(pet);
-      }
-    }
-    return pets;
+    // let pets = [];
+    // for (let pet of savedPets) {
+    //   if (pet.type == settings.typePreference &&
+    //       pet.age >= settings.ageRange.min &&
+    //       pet.age <= settings.ageRange.max) {
+    //         pets.push(pet);
+    //   }
+    // }
+    // return pets;
   }
 
-  onPress(data) {
-    console.log(data);
+  onPressRow(data)  {
+    this.props.navigation.navigate('PetInfo', {
+      index: data.index,
+      pet: data.item,
+      age: data.item.age,
+      id: data.item.id,
+      img: data.item.img,
+      name: data.item.name,
+      profile: data.item.profile,
+      sex: data.item.sex,
+      type: data.item.type,
+    })
   }
 
   extractKey({id}) {
     return id.toString();
   }
 
-  renderRow(row) {
-    const {age, img, name, profile, sex} = row.item;
+  renderRow = (row) => {
+    const {age, id, img, name, profile, sex, type} = row.item;
     return (
-      <TouchableOpacity onPress={() => this.onPress(row)}>
+      <TouchableOpacity onPress={() => this.onPressRow(row)}>
         <View style={styles.row}>
           <View style={styles.petImage}>
           <ImageBackground source={{uri: img}} style={{width: '100%', height: '100%'}} />
@@ -192,4 +207,4 @@ const mapDispatchToProps = {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(SavedScreen);
+export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(SavedScreen));

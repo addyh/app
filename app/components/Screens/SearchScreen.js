@@ -66,6 +66,10 @@ class SearchScreen extends Component {
     });
   }
 
+  static navigationOptions = {
+    header: <View />
+  }
+
   getFilteredPets(props) {
     let settings = props ? props.settings : this.state.settings;
     let allPets = props ? props.pets.allPets : this.state.pets.allPets;
