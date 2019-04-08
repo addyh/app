@@ -98,7 +98,7 @@ class SearchScreen extends Component {
       pets: nextProps.pets,
       settings: nextProps.settings,
       filteredPets: this.getFilteredPets(nextProps),
-      currentIndex: 0,
+      currentIndex: 0
     })
   }
 

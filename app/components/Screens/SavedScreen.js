@@ -17,15 +17,32 @@ class SavedScreen extends Component {
     super(props);
     this.state = {
       pets: this.props.pets,
-      settings: this.props.settings
+      settings: this.props.settings,
+      filteredPets: this.getFilteredPets(this.props)
     }
   }
 
   componentWillReceiveProps(nextProps) {
     this.setState({
       pets: nextProps.pets,
-      settings: nextProps.settings
+      settings: nextProps.settings,
+      filteredPets: this.getFilteredPets(nextProps)
     })
+  }
+
+  getFilteredPets(props) {
+    let settings = props ? props.settings : this.state.settings;
+    let savedPets = props ? props.pets.savedPets : this.state.pets.savedPets;
+
+    let pets = [];
+    for (let pet of savedPets) {
+      if (pet.type == settings.typePreference &&
+          pet.age >= settings.ageRange.min &&
+          pet.age <= settings.ageRange.max) {
+            pets.push(pet);
+      }
+    }
+    return pets;
   }
 
   onPress(data) {
@@ -54,21 +71,36 @@ class SavedScreen extends Component {
   }
 
   renderSavedPets() {
+    // No saved pets
     if (this.state.pets.savedPets.length == 0) {
       return(
         <View style={{flex:1,justifyContent:'center'}}>
-        <View style={{alignItems:'center'}}>
-          <Text style={{fontSize:32,fontWeight:'bold',paddingBottom:20}}>You have no pets saved.</Text>
-          <Text style={{fontSize:20}}>Go to Search and swipe right (&#8658;)</Text>
-          <Text style={{fontSize:20}}>on a photo to add some!</Text>
-        </View>
+          <View style={{alignItems:'center'}}>
+            <Text style={{fontSize:32,fontWeight:'bold',paddingBottom:20}}>You have no pets saved.</Text>
+            <Text style={{fontSize:20}}>Go to Search and swipe right (&#8658;)</Text>
+            <Text style={{fontSize:20}}>on a photo to add some!</Text>
+          </View>
         </View>
       );
     }
+    // Saved pets, but settings changed
+    else if (this.state.filteredPets.length ==0) {
+      return(
+        <View style={{padding:20,flex:1,justifyContent:'center'}}>
+          <View style={{alignItems:'center'}}>
+            <Text style={{fontSize:32,fontWeight:'bold'}}>You have saved pets,</Text>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold',paddingBottom:40}}>but they are hidden.</Text>
+            <Text style={{textAlign:'center',fontSize:20,paddingBottom:20}}>You have recently changed your settings, and none of your saved pets match your new settings.</Text>
+            <Text style={{textAlign:'center',fontSize:20}}>Try making your settings less strict, or go back to Search and swipe some more!</Text>
+          </View>
+        </View>
+      );
+    }
+    // Show saved pets
     else {
       return (
         <FlatList
-          data={this.state.pets.savedPets}
+          data={this.state.filteredPets}
           renderItem={this.renderRow}
           keyExtractor={this.extractKey}
         />
