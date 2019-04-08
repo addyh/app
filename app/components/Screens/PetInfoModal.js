@@ -6,6 +6,8 @@ class PetInfoModal extends Component {
 
   static navigationOptions = ({ navigation }) => ({
     title: navigation.getParam('name'),
+    headerTintColor: 'black',
+    headerTitleStyle: {color:'white'},
     headerStyle: {
       backgroundColor: colors.boxDark
     }
