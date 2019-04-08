@@ -20,7 +20,7 @@
                                                    moduleName:@"pinder"
                                             initialProperties:nil];
 
-  rootView.backgroundColor = [[UIColor alloc] initWithRed:0.27f green:0.51f blue:0.71f alpha:1];
+  rootView.backgroundColor = [[UIColor alloc] initWithRed:0.91f green:0.91f blue:0.91f alpha:1];
 
   self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
   UIViewController *rootViewController = [UIViewController new];
