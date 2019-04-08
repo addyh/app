@@ -305,7 +305,6 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   box: {
-    //backgroundColor: colors.boxDark,
     margin: 5,
   },
   boxA: {
