@@ -67,7 +67,6 @@ class SearchScreen extends Component {
   }
 
   static navigationOptions = {
-    headerStyle: {backgroundColor: colors.boxDark},
     header: <View />
   }
 

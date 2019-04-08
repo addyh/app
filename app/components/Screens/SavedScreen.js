@@ -24,8 +24,7 @@ class SavedScreen extends Component {
   }
 
   static navigationOptions = {
-    headerStyle: {backgroundColor: 'green'},
-    header: <View  style={{backgroundColor:'red'}} />
+    header: <View />
   }
 
   componentWillReceiveProps(nextProps) {
