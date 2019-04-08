@@ -5,8 +5,8 @@ import SearchScreen from './SearchScreen';
 import SavedScreen from './SavedScreen';
 import SettingsScreen from './SettingsScreen';
 import PetInfoModal from './PetInfoModal';
-import {fetchSettings} from '../../actions/settingsActions';
-import {fetchPets} from '../../actions/petsActions';
+import {fetchSettings} from '../actions/settingsActions';
+import {fetchPets} from '../actions/petsActions';
 
 const AppNavigator = createStackNavigator(
   {

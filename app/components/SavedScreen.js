@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import {withNavigation} from 'react-navigation';
 import NavBarBottom from './NavBarBottom';
-import * as colors from '../../styles/colors';
+import * as colors from '../styles/colors';
 
 class SavedScreen extends Component {
   constructor(props) {

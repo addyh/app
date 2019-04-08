@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {StyleSheet, Text, View} from 'react-native';
 import {withNavigation} from 'react-navigation';
-import * as colors from '../../styles/colors';
+import * as colors from '../styles/colors';
 
 class NavBarBottom extends Component {
   constructor(props) {

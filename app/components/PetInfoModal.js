@@ -6,7 +6,7 @@ import {
   ScrollView,
   ImageBackground,
 } from 'react-native';
-import * as colors from '../../styles/colors';
+import * as colors from '../styles/colors';
 
 class PetInfoModal extends Component {
 

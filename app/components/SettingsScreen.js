@@ -15,8 +15,8 @@ import {
   updateAgeMin,
   updateAgeMax,
   updateTypePreference
-} from '../../actions/settingsActions';
-import * as colors from '../../styles/colors';
+} from '../actions/settingsActions';
+import * as colors from '../styles/colors';
 
 class SettingsScreen extends Component {
   constructor(props) { 

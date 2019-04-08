@@ -13,10 +13,10 @@ import {
   TouchableOpacity
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
-import * as colors from '../../styles/colors';
+import * as colors from '../styles/colors';
 import {
   addSavedPet
-} from '../../actions/petsActions';
+} from '../actions/petsActions';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
