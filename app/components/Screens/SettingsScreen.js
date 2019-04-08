@@ -32,6 +32,7 @@ class SettingsScreen extends Component {
   }
 
   static navigationOptions = {
+    headerStyle: {backgroundColor: colors.boxDark},
     header: <View />
   }
 
