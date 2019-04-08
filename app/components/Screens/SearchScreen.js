@@ -9,7 +9,8 @@ import {
   ImageBackground,
   Dimensions,
   Animated,
-  PanResponder
+  PanResponder,
+  TouchableOpacity
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../../styles/colors';
@@ -94,11 +95,16 @@ class SearchScreen extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    let addingSavedPet = nextProps.pets.savedPets != this.props.pets.savedPets;
+
     this.setState({
       pets: nextProps.pets,
       settings: nextProps.settings,
       filteredPets: this.getFilteredPets(nextProps),
-      currentIndex: 0
+      // Reset to top card when any property (ie a setting) is changed
+      // except when saving a pet
+      // this will prevent flipping through cats and dogs at the same time
+      currentIndex: addingSavedPet ? this.state.currentIndex : 0
     })
   }
 
@@ -115,8 +121,10 @@ class SearchScreen extends Component {
             toValue: { x: SCREEN_WIDTH + 100, y: gestureState.dy },
             duration: 100
           }).start(() => {
-            this.props.addSavedPet(this.state.filteredPets[this.state.currentIndex]);
-            this.position.setValue({ x: 0, y: 0 })
+            //this.setState({ currentIndex: this.state.currentIndex + 1 }, () => {
+              this.props.addSavedPet(this.state.filteredPets[this.state.currentIndex]);
+              this.position.setValue({ x: 0, y: 0 })
+            //})
           })
         }
         // Swiping Left
@@ -197,6 +205,56 @@ class SearchScreen extends Component {
     }).reverse();
   }
 
+  renderEndOfDeck() {
+    // End of stack, no more cards
+    if (this.state.pets.allPets.length != 0 &&
+      this.state.pets.allPets.length == this.state.pets.savedPets.length) {
+        return (
+          <View style={{padding:20,flex:1,justifyContent:'center'}}>
+          <View style={{alignItems:'center'}}>
+            <Text style={{fontSize:52,fontWeight:'bold',paddingBottom:20}}>Uh oh!</Text>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold',paddingBottom:20}}>You've liked all of our pets!</Text>
+            <Text style={{textAlign:'center',fontSize:20}}>This page will automatically update when more pets become available for adoption.</Text>
+          </View>
+        </View>
+        );
+    }
+    // End of stack, try changing settings
+    else if (this.state.pets.allPets.length > 0 &&
+      this.state.currentIndex == 0 &&
+      this.state.filteredPets.length == 0) {
+      return (
+        <View style={{padding:20,flex:1,justifyContent:'center'}}>
+          <View style={{alignItems:'center'}}>
+            <Text style={{fontSize:52,fontWeight:'bold',paddingBottom:20}}>Uh oh!</Text>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold'}}>You've reached the</Text>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold'}}>end of the stack!</Text>
+            <Text style={{textAlign:'center',fontSize:20,paddingTop:20}}>Try modifying your settings to see more pets.</Text>
+          </View>
+        </View>
+      );
+    }
+    // End of stack, restack button
+    else if (this.state.pets.allPets.length > 0 &&
+      this.state.currentIndex == this.state.filteredPets.length &&
+      this.state.currentIndex > 0) {
+      return (
+        <View style={{padding:20,flex:1,justifyContent:'center'}}>
+          <View style={{alignItems:'center'}}>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold'}}>You've reached the</Text>
+            <Text style={{textAlign:'center',fontSize:32,fontWeight:'bold',paddingBottom:60}}>bottom of the stack.</Text>
+            <TouchableOpacity onPress={() => this.setState({currentIndex:0})} style={{borderRadius:40,backgroundColor:colors.boxLight,padding:40,}}>
+              <Text style={{fontWeight:'bold',fontSize:20}}>GO BACK TO TOP OF STACK</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+      );
+    }
+    else {
+      return null;
+    }
+  }
+
   render() {
     // console.log('search',this.props);
     // console.log('search',this.state);
@@ -205,6 +263,7 @@ class SearchScreen extends Component {
         <View style={styles.statusBar} />
         <View style={styles.boxA}>
         {this.renderCards()}
+        {this.renderEndOfDeck()}
         </View>
         <View style={styles.boxB}>
           <View style={[styles.boxB1, styles.box]}>

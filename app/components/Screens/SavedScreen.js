@@ -34,6 +34,8 @@ class SavedScreen extends Component {
     let settings = props ? props.settings : this.state.settings;
     let savedPets = props ? props.pets.savedPets : this.state.pets.savedPets;
 
+    return savedPets;
+
     let pets = [];
     for (let pet of savedPets) {
       if (pet.type == settings.typePreference &&
@@ -84,7 +86,7 @@ class SavedScreen extends Component {
       );
     }
     // Saved pets, but settings changed
-    else if (this.state.filteredPets.length ==0) {
+    else if (this.state.filteredPets.length == 0) {
       return(
         <View style={{padding:20,flex:1,justifyContent:'center'}}>
           <View style={{alignItems:'center'}}>
