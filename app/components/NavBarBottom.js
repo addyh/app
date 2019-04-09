@@ -13,7 +13,7 @@ class NavBarBottom extends Component {
     let currentScreen = this.props.navigation.state.routeName;
     if (currentScreen==screen) {
       return {
-        backgroundColor: colors.boxLight
+        backgroundColor: colors.boxDarker
       };
     }
   }
