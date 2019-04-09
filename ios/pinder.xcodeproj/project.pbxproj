@@ -44,12 +44,12 @@
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		ED297163215061F000B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED297162215061F000B7C4FE /* JavaScriptCore.framework */; };
 		ED2971652150620600B7C4FE /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED2971642150620600B7C4FE /* JavaScriptCore.framework */; };
-<<<<<<< HEAD
-=======
+
+
 		4C9FD0DCF7D84F5287244B4B /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC5FD718DF4D87B92B5717 /* libReactNativeConfig.a */; };
 		5CB8467FCC244C81AE3666F1 /* libReactNativeConfig-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A61FFE5CF1A40C7AC2191F1 /* libReactNativeConfig-tvOS.a */; };
 		820E74AECAD3422CA66F76F4 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B41EAA842436460CAB99BB6D /* libRNFetchBlob.a */; };
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -391,14 +391,14 @@
 		DF92E88FFDEF427FBA73BA20 /* RNGestureHandler.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNGestureHandler.xcodeproj; path = "../node_modules/react-native-gesture-handler/ios/RNGestureHandler.xcodeproj"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
-<<<<<<< HEAD
-=======
+
+
 		59D114E414CD48E190B39B72 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; name = "ReactNativeConfig.xcodeproj"; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		44FC5FD718DF4D87B92B5717 /* libReactNativeConfig.a */ = {isa = PBXFileReference; name = "libReactNativeConfig.a"; path = "libReactNativeConfig.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		7A61FFE5CF1A40C7AC2191F1 /* libReactNativeConfig-tvOS.a */ = {isa = PBXFileReference; name = "libReactNativeConfig-tvOS.a"; path = "libReactNativeConfig-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		4275BDB69DE04BF7B9A5EADD /* RNFetchBlob.xcodeproj */ = {isa = PBXFileReference; name = "RNFetchBlob.xcodeproj"; path = "../node_modules/rn-fetch-blob/ios/RNFetchBlob.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		B41EAA842436460CAB99BB6D /* libRNFetchBlob.a */ = {isa = PBXFileReference; name = "libRNFetchBlob.a"; path = "libRNFetchBlob.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1312,12 +1312,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = pinderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1348,12 +1348,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = pinderTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1387,12 +1387,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = pinder/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
@@ -1421,12 +1421,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = pinder/Info.plist;
 				INFOPLIST_OTHER_PREPROCESSOR_FLAGS = "-traditional";
@@ -1460,12 +1460,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = "pinder-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1504,12 +1504,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = "pinder-tvOS/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1547,12 +1547,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = "pinder-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1590,12 +1590,12 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)..\node_modules\neact-native-gesture-handlerios/**",
-<<<<<<< HEAD
+
 					"$(SRCROOT)..\node_modules\neact-native-configiosReactNativeConfig",
-=======
+
 					"$(SRCROOT)\..\node_modules\react-native-config\ios\ReactNativeConfig",
 					"$(SRCROOT)\..\node_modules\rn-fetch-blob\ios/**",
->>>>>>> ca3b7a5535b45f64878928db18d119df00a98a8a
+
 				);
 				INFOPLIST_FILE = "pinder-tvOSTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
