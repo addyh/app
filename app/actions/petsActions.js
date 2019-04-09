@@ -1,36 +1,50 @@
 import * as types from './types';
 import RNFetchBlob from 'rn-fetch-blob';
 
+const saveImage = (i, img, dispatch) => {
+  RNFetchBlob.config({fileCache: true})
+  .fetch('GET', img)
+  .then((res) => {
+    let path = res.path();
+    console.log(i, path);
+    dispatch({
+      type: types.SET_IMG_PATH,
+      payload: {i, path}
+    });
+  })
+}
+
+const fetchImages = (pets, dispatch) => {
+  for (let i in pets) {
+    saveImage(i, pets[i].img, dispatch);
+  }
+}
+
 export const fetchPets = () => dispatch => {
   if (0) {
     fetch('https://s3-us-west-2.amazonaws.com/cozi-interview-dev/pets.json')
     .then(res => res.json())
-    .then(data => {
+    .then(pets => {
+      fetchImages(pets, dispatch);
       dispatch({
         type: types.FETCH_ALL_PETS,
-        payload: data
+        payload: pets
       });
     });
   }
   else if (0) {
-    // send http request in a new thread (using native code)
-    RNFetchBlob.fetch('GET', 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg')
-      .then((res) => {
-        let status = res.info().status;
-        
-        if(status == 200) {
-          // the conversion is done in native code
-          let base64Str = res.base64()
-          // the following conversions are done in js, it's SYNC
-          let text = res.text()
-          let json = res.json()
-        } else {
-          // handle other status codes
-        }
-      })
-      // Something went wrong:
-      .catch((errorMessage, statusCode) => {
-        // error handling
+    RNFetchBlob
+    .config({
+      // add this option that makes response data to be stored as a file,
+      // this is much more performant.
+      fileCache : true,
+    })
+    .fetch('GET', 'http://www.example.com/file/example.zip', {
+      //somfe headers ..
+    })
+    .then((res) => {
+      // the temp file path
+      console.log('The file saved to ', res.path())
     })
   }
   else {
