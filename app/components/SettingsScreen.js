@@ -82,8 +82,8 @@ class SettingsScreen extends Component {
                 <Text style={styles.catPreferenceText}>Cat</Text>
                 <View style={styles.animalPreferenceToggle}>
                   <ToggleSwitch
-                    onColor={colors.toggleSwitch}
-                    offColor={colors.toggleSwitch}
+                    onColor={colors.boxDarker}
+                    offColor={colors.boxDarker}
                     size='large'
                     isOn={this.getTypePreferenceBool()}
                     onToggle={isOn => this.onToggle(isOn)}

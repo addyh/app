@@ -1,4 +1,5 @@
 import * as types from './types';
+import RNFetchBlob from 'rn-fetch-blob';
 
 export const fetchPets = () => dispatch => {
   if (0) {
@@ -10,6 +11,27 @@ export const fetchPets = () => dispatch => {
         payload: data
       });
     });
+  }
+  else if (1) {
+    // send http request in a new thread (using native code)
+    RNFetchBlob.fetch('GET', 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg')
+      .then((res) => {
+        let status = res.info().status;
+        
+        if(status == 200) {
+          // the conversion is done in native code
+          let base64Str = res.base64()
+          // the following conversions are done in js, it's SYNC
+          let text = res.text()
+          let json = res.json()
+        } else {
+          // handle other status codes
+        }
+      })
+      // Something went wrong:
+      .catch((errorMessage, statusCode) => {
+        // error handling
+    })
   }
   else {
     let data = [
