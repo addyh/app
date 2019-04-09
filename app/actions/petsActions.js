@@ -12,7 +12,7 @@ export const fetchPets = () => dispatch => {
       });
     });
   }
-  else if (1) {
+  else if (0) {
     // send http request in a new thread (using native code)
     RNFetchBlob.fetch('GET', 'https://s3-us-west-2.amazonaws.com/cozi-interview-dev/patronus.jpg')
       .then((res) => {
