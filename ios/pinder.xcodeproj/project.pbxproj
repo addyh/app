@@ -40,7 +40,12 @@
 		4B6300E0F1E3488C8B5E1D30 /* libRNGestureHandler-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BFCCC99207EA47DD806515C2 /* libRNGestureHandler-tvOS.a */; };
 		4C9FD0DCF7D84F5287244B4B /* libReactNativeConfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 44FC5FD718DF4D87B92B5717 /* libReactNativeConfig.a */; };
 		5CB8467FCC244C81AE3666F1 /* libReactNativeConfig-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A61FFE5CF1A40C7AC2191F1 /* libReactNativeConfig-tvOS.a */; };
-		60926853225D4F04008E040E /* logo1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926852225D4F04008E040E /* logo1.png */; };
+		6092685A225D5412008E040E /* logo40.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926854225D5412008E040E /* logo40.png */; };
+		6092685B225D5412008E040E /* logo60.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926855225D5412008E040E /* logo60.png */; };
+		6092685C225D5412008E040E /* logo20.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926856225D5412008E040E /* logo20.png */; };
+		6092685D225D5412008E040E /* logo340.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926857225D5412008E040E /* logo340.png */; };
+		6092685E225D5412008E040E /* logo1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926858225D5412008E040E /* logo1024.png */; };
+		6092685F225D5412008E040E /* logo29.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926859225D5412008E040E /* logo29.png */; };
 		820E74AECAD3422CA66F76F4 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B41EAA842436460CAB99BB6D /* libRNFetchBlob.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -387,7 +392,12 @@
 		44FC5FD718DF4D87B92B5717 /* libReactNativeConfig.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libReactNativeConfig.a; sourceTree = "<group>"; };
 		59D114E414CD48E190B39B72 /* ReactNativeConfig.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = ReactNativeConfig.xcodeproj; path = "../node_modules/react-native-config/ios/ReactNativeConfig.xcodeproj"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		60926852225D4F04008E040E /* logo1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1.png; path = ../images/logo1.png; sourceTree = "<group>"; };
+		60926854225D5412008E040E /* logo40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo40.png; path = ../images/logo40.png; sourceTree = "<group>"; };
+		60926855225D5412008E040E /* logo60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo60.png; path = ../images/logo60.png; sourceTree = "<group>"; };
+		60926856225D5412008E040E /* logo20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo20.png; path = ../images/logo20.png; sourceTree = "<group>"; };
+		60926857225D5412008E040E /* logo340.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo340.png; path = ../images/logo340.png; sourceTree = "<group>"; };
+		60926858225D5412008E040E /* logo1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo1024.png; path = ../images/logo1024.png; sourceTree = "<group>"; };
+		60926859225D5412008E040E /* logo29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo29.png; path = ../images/logo29.png; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A61FFE5CF1A40C7AC2191F1 /* libReactNativeConfig-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libReactNativeConfig-tvOS.a"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -546,7 +556,12 @@
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
-				60926852225D4F04008E040E /* logo1.png */,
+				60926856225D5412008E040E /* logo20.png */,
+				60926859225D5412008E040E /* logo29.png */,
+				60926854225D5412008E040E /* logo40.png */,
+				60926855225D5412008E040E /* logo60.png */,
+				60926857225D5412008E040E /* logo340.png */,
+				60926858225D5412008E040E /* logo1024.png */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
@@ -1205,9 +1220,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6092685B225D5412008E040E /* logo60.png in Resources */,
+				6092685F225D5412008E040E /* logo29.png in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				60926853225D4F04008E040E /* logo1.png in Resources */,
+				6092685D225D5412008E040E /* logo340.png in Resources */,
+				6092685C225D5412008E040E /* logo20.png in Resources */,
+				6092685E225D5412008E040E /* logo1024.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				6092685A225D5412008E040E /* logo40.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
