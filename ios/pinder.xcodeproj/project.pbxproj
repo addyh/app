@@ -51,6 +51,7 @@
 		60926867225D55E7008E040E /* logo87.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926862225D55E7008E040E /* logo87.png */; };
 		60926868225D55E7008E040E /* logo120.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926863225D55E7008E040E /* logo120.png */; };
 		60926869225D55E7008E040E /* logo180.png in Resources */ = {isa = PBXBuildFile; fileRef = 60926864225D55E7008E040E /* logo180.png */; };
+		6092686B225D5D5F008E040E /* logo1024-whitebg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6092686A225D5D5F008E040E /* logo1024-whitebg.png */; };
 		820E74AECAD3422CA66F76F4 /* libRNFetchBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B41EAA842436460CAB99BB6D /* libRNFetchBlob.a */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
@@ -408,6 +409,7 @@
 		60926862225D55E7008E040E /* logo87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo87.png; path = ../images/logo87.png; sourceTree = "<group>"; };
 		60926863225D55E7008E040E /* logo120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo120.png; path = ../images/logo120.png; sourceTree = "<group>"; };
 		60926864225D55E7008E040E /* logo180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo180.png; path = ../images/logo180.png; sourceTree = "<group>"; };
+		6092686A225D5D5F008E040E /* logo1024-whitebg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "logo1024-whitebg.png"; path = "../images/logo1024-whitebg.png"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
 		7A61FFE5CF1A40C7AC2191F1 /* libReactNativeConfig-tvOS.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = "libReactNativeConfig-tvOS.a"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
@@ -568,6 +570,7 @@
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				60926861225D55E6008E040E /* logo58.png */,
 				60926860225D55E6008E040E /* logo80.png */,
+				6092686A225D5D5F008E040E /* logo1024-whitebg.png */,
 				60926862225D55E7008E040E /* logo87.png */,
 				60926863225D55E7008E040E /* logo120.png */,
 				60926864225D55E7008E040E /* logo180.png */,
@@ -1245,6 +1248,7 @@
 				6092685E225D5412008E040E /* logo1024.png in Resources */,
 				60926865225D55E7008E040E /* logo80.png in Resources */,
 				60926866225D55E7008E040E /* logo58.png in Resources */,
+				6092686B225D5D5F008E040E /* logo1024-whitebg.png in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
 				6092685A225D5412008E040E /* logo40.png in Resources */,
 				60926869225D55E7008E040E /* logo180.png in Resources */,
