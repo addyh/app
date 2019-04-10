@@ -65,7 +65,16 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **/app/**
   * **/actions/**
     * **petsActions.js**
+      * saveImage()
+      * fetchImages()
+      * exports fetchPets()
+      * exports addSavedPet()
     * **settingsActions.js**
+      * exports fetchSettings()
+      * exports updateProfile()
+      * exports updateAgeMin()
+      * exports updateAgeMax()
+      * exports updateTypePreference()
     * **types.js**
   * **/components/** - All screens/pages of the app are their own Component
     * **HomeScreen.js** - a container for all pages and the navigation
