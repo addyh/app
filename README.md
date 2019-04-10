@@ -1,6 +1,8 @@
 # Pet Adoption ReactNative App
 
-[SETUP](#setup)
+## Table of Contents
+* [Preview](#preview)
+* [SETUP](#setup)
 
 ## Preview
 
