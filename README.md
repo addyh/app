@@ -86,12 +86,9 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
   * **/reducers/**
     * **index.js**
     * **petsReducer.js** - (update Redux states for `pets`)
-      * `state.pets.`
-        * `allPets`
-        * `savedPets`
-      * FETCH_ALL_PETS
-      * SET_IMG_SRC
-      * ADD_SAVED_PET
+      * FETCH_ALL_PETS (get `state.pets.allPets`)
+      * SET_IMG_SRC (create property `state.pets.allPets[n].src` -- a local copy of the image file)
+      * ADD_SAVED_PET (add a pet to `state.pets.savedPets`)
     * **settingsReducer.js** - (update Redux states for `settings`)
       * FETCH_SETTINGS - (get `state.settings`)
       * UPDATE_PROFILE - (update `state.settings.profile`)
