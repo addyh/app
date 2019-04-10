@@ -7,6 +7,7 @@
 * [SETUP](#setup)
   * [Config](#config)
   * [Install](#install)
+  * [Build](#build)
 
 ## Preview
 
@@ -28,15 +29,18 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 ## Install
 ```
 git clone https://github.com/addyh/pinder.git
-cd ./pinder
+cd pinder
 npm install && npm install -g react-native-cli
 ```
+
+## Build 
 ### For Windows / Android dev
 (while in same directory as above, turn on an Android emulator or plug in an android device)
 ```
+react-native run-android --variant=release
 ```
 ### For MacOS / iPhone dev
 Open the iOS project at `ios/pinder.xcodeproj` with Xcode
 ```
-
+react-native run-ios --configuration Release
 ```
