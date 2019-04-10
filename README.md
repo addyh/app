@@ -2,7 +2,11 @@
 
 ## Table of Contents
 * [Preview](#preview)
+  * [Android](#android)
+  * [iPhone](#iphone)
 * [SETUP](#setup)
+  * [Config](#config)
+  * [Install](#install)
 
 ## Preview
 
@@ -14,9 +18,9 @@
 
 # SETUP
 
-# Config
+### Config
 First of all, before anything, please note that the URIs to `pets.json` and `settings.json` need to be set in:
 ```
 / API_CONFIG.json
 ```
-# Installation
+### Install
