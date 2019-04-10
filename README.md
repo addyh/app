@@ -59,26 +59,26 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 
 # Documentation
 
-* .env
-* API_CONFIG.json
-* index.js
-* /app/
-  * /actions/
-    * petsActions.js
-    * settingsActions.js
-    * types.js
-  * /components/
-    * HomeScreen.js
-    * NavBarBottom.js
-    * PetInfoModal.js
-    * SavedScreen.js
-    * SearchScreen.js
-    * SettingsScreen.js
-  * /reducers/
-    * index.js
-    * petsReducer.js
-    * settingsReducer.js
-  * /styles/
-    * colors.js
-  * App.js
-  * store.js
+* **.env**
+* **API_CONFIG.json**
+* **index.js**
+* **/app/**
+  * **/actions/**
+    * **petsActions.js**
+    * **settingsActions.js**
+    * **types.js**
+  * **/components/**
+    * **HomeScreen.js**
+    * **NavBarBottom.js**
+    * **PetInfoModal.js**
+    * **SavedScreen.js**
+    * **SearchScreen.js**
+    * **SettingsScreen.js**
+  * **/reducers/**
+    * **index.js**
+    * **petsReducer.js**
+    * **settingsReducer.js**
+  * **/styles/**
+    * **colors.js**
+  * **App.js**
+  * **store.js**
