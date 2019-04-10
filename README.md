@@ -9,6 +9,7 @@ A Pet Adoption App -- ReactNative
   * [Install](#install---installing-all-dependencies)
   * [Config](#config---set-petsjson-and-settingsjson-locations)
   * [Build](#build)
+* [Documentation](#documentation)
 
 ## Preview
 
@@ -55,3 +56,29 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
   * #### `cd android && ./gradlew assembleRelease`
   * #### `cd android && gradlew.bat assembleRelease` on Windows
   * #### The apk will be saved to `./android/app/build/outputs/apk/app-release.apk`
+
+# Documentation
+
+* .env
+* API_CONFIG.json
+* index.js
+* /app/
+  * /actions/
+    * petsActions.js
+    * settingsActions.js
+    * types.js
+  * /components/
+    * HomeScreen.js
+    * NavBarBottom.js
+    * PetInfoModal.js
+    * SavedScreen.js
+    * SearchScreen.js
+    * SettingsScreen.js
+  * /reducers/
+    * index.js
+    * petsReducer.js
+    * settingsReducer.js
+  * /styles/
+    * colors.js
+  * App.js
+  * store.js
