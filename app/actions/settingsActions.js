@@ -1,8 +1,9 @@
 import * as types from './types';
+import * as API from '../../API_CONFIG.json';
 
 export const fetchSettings = () => dispatch => {
-  if (0) {
-    fetch('https://s3-us-west-2.amazonaws.com/cozi-interview-dev/settings.json')
+
+    fetch(API['settings.json'])
     .then(res => res.json())
     .then(res => ({
       id: res.id,
@@ -15,9 +16,7 @@ export const fetchSettings = () => dispatch => {
         type: types.FETCH_SETTINGS,
         payload: data
       });
-    });
-  }
-  else {
+    }).catch(() => {
     let data = {
       "id": 2001,
       "profile": "I love all animals! I live in a nice big house on an acre of land, the pets will have plenty of room to run around and have fun. I work from home too so I will always be available to them. I grew up on a farm and have a great deal of experience working with animals.",
@@ -31,7 +30,7 @@ export const fetchSettings = () => dispatch => {
       type: types.FETCH_SETTINGS,
       payload: data
     });
-  }
+  })
 }
 
 export const updateProfile = (profile) => dispatch => {

@@ -168,7 +168,7 @@ class SearchScreen extends Component {
           style={[this.rotateAndTranslate, styles.layout]}>
             <View style={[styles.boxA1, styles.box]}>
                 <View style={{backgroundColor:colors.boxLight}}>
-                  <ImageBackground source={{uri: item.img}} style={{width: '100%', height: '100%'}}>
+                  <ImageBackground source={{uri: item.src}} style={{width: '100%', height: '100%'}}>
                     <Animated.View style={[{opacity: this.likeOpacity}, styles.cardViewLike]}>
                       <Text style={styles.cardLike}>LIKE</Text>
                     </Animated.View>
@@ -194,7 +194,7 @@ class SearchScreen extends Component {
           style={[{ transform: [{scale: this.nextCardScale}]}, styles.layout]}>
             <View style={[styles.boxA1, styles.box]}>
                 <Animated.View style={{opacity: this.nextCardOpacity,backgroundColor:colors.boxLight}}>
-                  <ImageBackground source={{uri: item.img}} style={{width: '100%', height: '100%'}}>
+                  <ImageBackground source={{uri: item.src}} style={{width: '100%', height: '100%'}}>
                   </ImageBackground>
                 </Animated.View>
             </View>
@@ -260,6 +260,8 @@ class SearchScreen extends Component {
   }
 
   render() {
+    console.log(this.props);
+    console.log(this.state);
     return (
       <View style={styles.container}>
         <View style={styles.statusBar} />

@@ -20,13 +20,13 @@ class PetInfoModal extends Component {
   });
 
   render() {
-    const {age, id, img, name, profile, sex, type} = 
+    const {age, id, src, name, profile, sex, type} = 
       this.props.navigation.getParam('pet');
     return (
       <View style={styles.container}>
         <View style={styles.paragraph}>
           <View style={styles.box1}>
-            <ImageBackground source={{uri: img}} style={{width: '100%', height: '100%'}} />
+            <ImageBackground source={{uri: src}} style={{width: '100%', height: '100%'}} />
           </View>
           <View style={styles.box2}>
             <ScrollView style={styles.petDescription}>

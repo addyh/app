@@ -8,3 +8,4 @@ export const UPDATE_TYPE_PREFERENCE = 'UPDATE_TYPE_PREFERENCE';
 // pets reducer
 export const FETCH_ALL_PETS = 'FETCH_ALL_PETS';
 export const ADD_SAVED_PET = 'ADD_SAVED_PET';
+export const SET_IMG_SRC = 'SET_IMG_SRC';

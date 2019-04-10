@@ -1,14 +1,19 @@
-import * as types from './types';
+import {Platform} from 'react-native';
 import RNFetchBlob from 'rn-fetch-blob';
+import * as types from './types';
+import * as API from '../../API_CONFIG.json';
 
 const saveImage = (i, img, dispatch) => {
-  RNFetchBlob.config({fileCache: true})
+  RNFetchBlob.config({
+    fileCache: true,
+    path : RNFetchBlob.fs.dirs.DocumentDir + '/'+ img.split('/').pop()
+  })
   .fetch('GET', img)
   .then((res) => {
-    let path = res.path();
+    let path = Platform.OS === 'android' ? 'file://' + res.path() : '' + res.path();
     console.log(i, path);
     dispatch({
-      type: types.SET_IMG_PATH,
+      type: types.SET_IMG_SRC,
       payload: {i, path}
     });
   })
@@ -21,8 +26,8 @@ const fetchImages = (pets, dispatch) => {
 }
 
 export const fetchPets = () => dispatch => {
-  if (0) {
-    fetch('https://s3-us-west-2.amazonaws.com/cozi-interview-dev/pets.json')
+
+    fetch(API['pets.json'])
     .then(res => res.json())
     .then(pets => {
       fetchImages(pets, dispatch);
@@ -30,24 +35,7 @@ export const fetchPets = () => dispatch => {
         type: types.FETCH_ALL_PETS,
         payload: pets
       });
-    });
-  }
-  else if (0) {
-    RNFetchBlob
-    .config({
-      // add this option that makes response data to be stored as a file,
-      // this is much more performant.
-      fileCache : true,
-    })
-    .fetch('GET', 'http://www.example.com/file/example.zip', {
-      //somfe headers ..
-    })
-    .then((res) => {
-      // the temp file path
-      console.log('The file saved to ', res.path())
-    })
-  }
-  else {
+    }).catch(() => {
     let data = [
       {
         "id": 2001,
@@ -144,7 +132,7 @@ export const fetchPets = () => dispatch => {
       type: types.FETCH_ALL_PETS,
       payload: data
     });
-  }
+  });
 }
 
 export const addSavedPet = (pet) => dispatch => {

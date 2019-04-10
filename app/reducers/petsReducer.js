@@ -6,7 +6,16 @@ const initialState = {
 };
 
 export default function(state=initialState, action) {
+  console.log(action.type);
   switch (action.type) {
+
+    case types.SET_IMG_SRC:
+      let allPets = [...state.allPets];
+      allPets[action.payload.i].src = action.payload.path;
+      return {
+        ...state,
+        allPets: allPets
+      }
 
     case types.FETCH_ALL_PETS:
       return {

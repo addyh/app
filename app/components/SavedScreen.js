@@ -58,7 +58,7 @@ class SavedScreen extends Component {
       pet: data.item,
       age: data.item.age,
       id: data.item.id,
-      img: data.item.img,
+      src: data.item.src,
       name: data.item.name,
       profile: data.item.profile,
       sex: data.item.sex,
@@ -71,12 +71,12 @@ class SavedScreen extends Component {
   }
 
   renderRow = (row) => {
-    const {age, id, img, name, profile, sex, type} = row.item;
+    const {age, id, src, name, profile, sex, type} = row.item;
     return (
       <TouchableOpacity onPress={() => this.onPressRow(row)}>
         <View style={styles.row}>
           <View style={styles.petImage}>
-          <ImageBackground source={{uri: img}} style={{width: '100%', height: '100%'}} />
+          <ImageBackground source={{uri: src}} style={{width: '100%', height: '100%'}} />
           </View>
           <View style={styles.petDetails}>
             <Text style={styles.petName}>{name}, {age}yr, {sex}</Text>
