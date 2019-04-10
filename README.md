@@ -21,12 +21,12 @@
 
 # SETUP
 
-## Config
+## Config - Set pets.json and settings.json locations
 First of all, before anything, please note that the URIs to `pets.json` and `settings.json` are set in:
 ```
 / API_CONFIG.json
 ```
-## Install
+## Install - Installation all dependencies
 ```
 git clone https://github.com/addyh/pinder.git
 cd pinder
