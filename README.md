@@ -38,17 +38,18 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 
 ## Build
 
-* Make sure an Android/iOS device is connected or the emulator is running.
-* #### With React-Native-cli:  `npm install -g react-native-cli`
+Make sure an Android/iOS device is connected or the emulator is running.
+* **With React-Native-cli:**  `npm install -g react-native-cli`
+
   * For Windows / Android dev:  `react-native run-android --variant=release`
   * For MacOS / iPhone dev:  `react-native run-ios --configuration Release`
-* #### Build With Android Studio
+* **Build With Android Studio**
   * Start the react native Metro server: `react-native start`
   * Then press the green "Run" (play button) to build and run in Android Studio.
-* #### Build With XCode
+* **Build With XCode**
   * Open the iOS project `ios/pinder.xcodeproj` with Xcode.
   * Then press the green "Run" (play button) to build and run in Xcode.
-* #### Build with gradle
+* **Build with gradle**
   * `cd android && ./gradlew assembleRelease`
   * `cd android && gradlew.bat assembleRelease` on Windows
   * The apk will be saved to `./android/app/build/outputs/apk/app-release.apk`
