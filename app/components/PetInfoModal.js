@@ -8,20 +8,22 @@ import {
 } from 'react-native';
 import * as colors from '../styles/colors';
 
+// The Saved Pet Details Modal Screen - show details for a saved pet
 class PetInfoModal extends Component {
 
   static navigationOptions = ({ navigation }) => ({
+    // Set header title
     title: `${navigation.getParam('name')}, ${navigation.getParam('age')}yr, ${navigation.getParam('sex')}`,
-    headerTintColor: 'black',
-    headerTitleStyle: {color:'black'},
+    headerTintColor: 'black',          // Set back button too on ios (on android is same)
+    headerTitleStyle: {color:'black'}, // Set header text color
     headerStyle: {
-      backgroundColor: colors.boxDark
+      backgroundColor: colors.boxDark  // Set background color of the modal's header box
     }
   });
 
   render() {
-    const {age, id, src, name, profile, sex, type} = 
-      this.props.navigation.getParam('pet');
+    // Get the pet info details from the passed in navigation param
+    const {age, id, src, name, profile, sex, type} = this.props.navigation.getParam('pet');
     return (
       <View style={styles.container}>
         <View style={styles.paragraph}>

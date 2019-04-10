@@ -1,15 +1,17 @@
 import * as types from '../actions/types';
 
+// All user settings from settings.json
 const initialState = {
-  id: {},
-  profile: {},
-  ageRange: {},
-  typePreference: {}
+  id: {},       // integer
+  profile: {},  // string
+  ageRange: {}, // {min: integer, max: integer}
+  typePreference: {} // dog or cat
 };
 
 export default function(state=initialState, action) {
   switch (action.type) {
 
+    // We are being given the data from settings.json
     case types.FETCH_SETTINGS:
       return {
         ...state,
@@ -19,6 +21,8 @@ export default function(state=initialState, action) {
         typePreference: action.payload.typePreference
       }
 
+    // Being given a setting to update :
+    
     case types.UPDATE_PROFILE:
       return {
         ...state,

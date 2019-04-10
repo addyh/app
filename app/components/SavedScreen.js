@@ -13,20 +13,24 @@ import {withNavigation} from 'react-navigation';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../styles/colors';
 
+// The Screen which shows all of the savedPets (all "liked" pets)
 class SavedScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
       pets: this.props.pets,
       settings: this.props.settings,
+      // Incase we don't want to show ineligible pets based on settings
       filteredPets: this.getFilteredPets(this.props)
     }
   }
 
+  // Hide header. Make it an empty blank view
   static navigationOptions = {
     header: <View />
   }
 
+  // Bring the redux state down
   componentWillReceiveProps(nextProps) {
     this.setState({
       pets: nextProps.pets,
@@ -35,6 +39,9 @@ class SavedScreen extends Component {
     })
   }
 
+  // If enabled,
+  // Based on user settings, return only pets from savedPets that qualify
+  // Right now it is disabled because of the comment block and early return
   getFilteredPets(props) {
     let settings = props ? props.settings : this.state.settings;
     let savedPets = props ? props.pets.savedPets : this.state.pets.savedPets;
@@ -52,8 +59,10 @@ class SavedScreen extends Component {
     // return pets;
   }
 
+  // Navigate to modal when a row is pressed
   onPressRow(data)  {
     this.props.navigation.navigate('PetInfo', {
+      // Passing all pet props down to modal
       index: data.index,
       pet: data.item,
       age: data.item.age,
@@ -70,6 +79,7 @@ class SavedScreen extends Component {
     return id.toString();
   }
 
+  // Render each row as a touchable button
   renderRow = (row) => {
     const {age, id, src, name, profile, sex, type} = row.item;
     return (
@@ -87,6 +97,7 @@ class SavedScreen extends Component {
     );
   }
 
+  // Render the container
   renderSavedPets() {
     // No saved pets
     if (this.state.pets.savedPets.length == 0) {
@@ -193,6 +204,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// Bring Redux state down
 function mapStateToProps(state) {
   return {
     pets: state.pets,
@@ -204,4 +216,5 @@ const mapDispatchToProps = {
 
 }
 
+// Connect to Redux and Navigation props
 export default connect(mapStateToProps, mapDispatchToProps)(withNavigation(SavedScreen));

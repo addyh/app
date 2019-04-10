@@ -3,12 +3,14 @@ import {StyleSheet, Text, View} from 'react-native';
 import {withNavigation} from 'react-navigation';
 import * as colors from '../styles/colors';
 
+// Navigation link component at bottom of every Screen on the app
 class NavBarBottom extends Component {
   constructor(props) {
     super(props);
     this.highlightIfOnScreen = this.highlightIfOnScreen.bind(this);
   }
 
+  // Return a dark backgroundColor if the navigation property is the current screen
   highlightIfOnScreen (screen) {
     let currentScreen = this.props.navigation.state.routeName;
     if (currentScreen==screen) {
@@ -18,6 +20,7 @@ class NavBarBottom extends Component {
     }
   }
 
+  // Render the 3 app navigation links, highlighting current screen
   render() {
     return (
       <View style={styles.navBottom}>
@@ -46,4 +49,5 @@ const styles = StyleSheet.create({
   },
 });
 
+// Get access to navigation prop
 export default withNavigation(NavBarBottom);

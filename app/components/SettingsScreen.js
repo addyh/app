@@ -18,6 +18,7 @@ import {
 } from '../actions/settingsActions';
 import * as colors from '../styles/colors';
 
+// Screen with all user settings
 class SettingsScreen extends Component {
   constructor(props) { 
     super(props);
@@ -37,7 +38,8 @@ class SettingsScreen extends Component {
 
   componentWillReceiveProps(nextProps) {
     this.setState({
-      pets: nextProps.pets,
+      pets: nextProps.pets, // pull in the pets too
+      // user settings:
       id: nextProps.settings.id,
       profile: nextProps.settings.profile,
       ageRange: nextProps.settings.ageRange,
@@ -58,10 +60,13 @@ class SettingsScreen extends Component {
     return this.state.typePreference == 'dog';
   }
 
+  // Dispatch an action to update the animal type on toggle
   onToggle(isOn){
     this.props.updateTypePreference(this.getAnimalFromBool(isOn));
   }
 
+  // Beautiful SettingsScreen component
+  // Everytime something is changed, dispatch an action to update it in Redux
   render() {
     return (
       <View style={styles.container}>
@@ -234,6 +239,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// Bring down Redux state
 function mapStateToProps(state) {
   return {
     pets: state.pets,
@@ -241,6 +247,7 @@ function mapStateToProps(state) {
   }
 }
 
+// Bring in update actions
 const mapDispatchToProps = {
   updateProfile,
   updateAgeMin,
@@ -248,4 +255,5 @@ const mapDispatchToProps = {
   updateTypePreference
 }
 
+// Connect to Redux
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);

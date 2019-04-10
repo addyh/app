@@ -1,8 +1,8 @@
 import * as types from './types';
 import * as API from '../../API_CONFIG.json';
 
+// Get settings.json from API and dispatch to Redux state
 export const fetchSettings = () => dispatch => {
-
     fetch(API['settings.json'])
     .then(res => res.json())
     .then(res => ({
@@ -32,6 +32,8 @@ export const fetchSettings = () => dispatch => {
     });
   })
 }
+
+// Update a setting to the state
 
 export const updateProfile = (profile) => dispatch => {
   dispatch({

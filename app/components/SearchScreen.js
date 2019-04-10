@@ -14,24 +14,24 @@ import {
 } from 'react-native';
 import NavBarBottom from './NavBarBottom';
 import * as colors from '../styles/colors';
-import {
-  addSavedPet
-} from '../actions/petsActions';
+import {addSavedPet} from '../actions/petsActions';
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 const SCREEN_WIDTH = Dimensions.get('window').width;
 
+// The main screen. Where users can swipe left or right
 class SearchScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.position = new Animated.ValueXY();
+    this.position = new Animated.ValueXY(); // Position of pet card (0, 0)
     this.state = {
       pets: this.props.pets,
       settings: this.props.settings,
       filteredPets: this.getFilteredPets(this.props),
-      currentIndex: 0
+      currentIndex: 0 // index of the current pet card
     }
+    // Like / Nope rotations
     this.rotate = this.position.x.interpolate({
       inputRange:[-SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2],
       outputRange:['-10deg', '0deg', '10deg'],
@@ -44,21 +44,25 @@ class SearchScreen extends Component {
       ...this.position.getTranslateTransform()
       ]
     }
+    // The more right we drag, the more we see the word like
     this.likeOpacity = this.position.x.interpolate({
       inputRange:[-SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2],
       outputRange:[0, 0, 1],
       extrapolate: 'clamp'
     });
+    // More left drag, more dislike
     this.dislikeOpacity = this.position.x.interpolate({
       inputRange:[-SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2],
       outputRange:[1, 0, 0],
       extrapolate: 'clamp'
     });
+    // Further away from center, more sharp next card becomes
     this.nextCardOpacity = this.position.x.interpolate({
       inputRange:[-SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2],
       outputRange:[1, 0, 1],
       extrapolate: 'clamp'
     });
+    // more we drag away from center, larger into size next card becomoes
     this.nextCardScale = this.position.x.interpolate({
       inputRange:[-SCREEN_WIDTH/2, 0, SCREEN_WIDTH/2],
       outputRange:[1, .8, 1],
@@ -66,10 +70,13 @@ class SearchScreen extends Component {
     });
   }
 
+  // Hide header
   static navigationOptions = {
     header: <View />
   }
 
+  // Only show applicable pets based on settings state
+  // (or prop passed in, for when it's being updated now)
   getFilteredPets(props) {
     let settings = props ? props.settings : this.state.settings;
     let allPets = props ? props.pets.allPets : this.state.pets.allPets;
@@ -92,12 +99,14 @@ class SearchScreen extends Component {
     return pets;
   }
 
+  // use currentIndex to return the pet profile string
   getCurrentPetDescription() {
     let pets =  this.state.filteredPets;
     return pets[this.state.currentIndex]?
     pets[this.state.currentIndex].profile:'';
   }
 
+  // Bring state down from Redux
   componentWillReceiveProps(nextProps) {
     let addingSavedPet = nextProps.pets.savedPets != this.props.pets.savedPets;
 
@@ -125,6 +134,10 @@ class SearchScreen extends Component {
             toValue: { x: SCREEN_WIDTH + 100, y: gestureState.dy },
             duration: 100
           }).start(() => {
+            // Take this +1 out. otherwise we are skipping a pet everytime we swipe right
+            // but only for swipe right. we need it on swipe left to move on.
+            // with swipe right, since it is being added to savedPets, it will get filtered out 
+            // bringing down the currentIndex by 1
             //this.setState({ currentIndex: this.state.currentIndex + 1 }, () => {
               this.props.addSavedPet(this.state.filteredPets[this.state.currentIndex]);
               this.position.setValue({ x: 0, y: 0 })
@@ -259,6 +272,7 @@ class SearchScreen extends Component {
     }
   }
 
+  // Render the cards, then pet profile in static scrollview
   render() {
     return (
       <View style={styles.container}>
@@ -379,6 +393,7 @@ const styles = StyleSheet.create({
   },
 });
 
+// Bring state down from Redux
 function mapStateToProps(state) {
   return {
     pets: state.pets,
@@ -390,4 +405,5 @@ const mapDispatchToProps = {
   addSavedPet
 }
 
+// connect to Redux
 export default connect(mapStateToProps, mapDispatchToProps)(SearchScreen);

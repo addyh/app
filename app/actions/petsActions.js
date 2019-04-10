@@ -3,6 +3,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import * as types from './types';
 import * as API from '../../API_CONFIG.json';
 
+// Save image locally and dispatch an action to update its src in pets object of redux state
 const saveImage = (i, img, dispatch) => {
   RNFetchBlob.config({
     fileCache: true,
@@ -18,23 +19,27 @@ const saveImage = (i, img, dispatch) => {
   })
 }
 
+// Go through every pet in pets.json
+// and take note of their src and index for saveImage()
 const fetchImages = (pets, dispatch) => {
   for (let i in pets) {
     saveImage(i, pets[i].img, dispatch);
   }
 }
 
+// Get pets.json from API and dispatch to redux state
 export const fetchPets = () => dispatch => {
-
     fetch(API['pets.json'])
     .then(res => res.json())
     .then(pets => {
+      // Do some image preloading concurrently
       fetchImages(pets, dispatch);
       dispatch({
         type: types.FETCH_ALL_PETS,
         payload: pets
       });
     }).catch(() => {
+    // Backup of pets.json incase network fails
     let data = [
       {
         "id": 2001,
@@ -134,6 +139,7 @@ export const fetchPets = () => dispatch => {
   });
 }
 
+// Add a pet to savedPets (User "liked" one)
 export const addSavedPet = (pet) => dispatch => {
   dispatch({
     type: types.ADD_SAVED_PET,
