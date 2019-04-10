@@ -36,6 +36,7 @@ npm install && npm install -g react-native-cli
 ```
 ```
 ### For MacOS / iPhone dev
+Open the iOS project `ios/pinder.xcodeproj` with Xcode
 ```
 
 ```
