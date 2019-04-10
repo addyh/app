@@ -1,6 +1,6 @@
 # Pet Adoption ReactNative App
 
-<a href="#SETUP"</a>STEUP</a>
+[SETUP](#setup)
 
 ## Preview
 
