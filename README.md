@@ -45,10 +45,10 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * #### Build With Android Studio
   * Start the react native Metro server: `react-native start`
   * Then press the green "Run" (play button) to build and run in Android Studio.
-* **Build With XCode**
+* #### Build With XCode
   * Open the iOS project `ios/pinder.xcodeproj` with Xcode.
   * Then press the green "Run" (play button) to build and run in Xcode.
-* **Build with gradle**
+* #### Build with gradle
   * `cd android && ./gradlew assembleRelease`
   * `cd android && gradlew.bat assembleRelease` on Windows
   * The apk will be saved to `./android/app/build/outputs/apk/app-release.apk`
