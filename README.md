@@ -6,8 +6,8 @@ A Pet Adoption App -- ReactNative
   * [Android](#android)
   * [iPhone](#iphone)
 * [SETUP](#setup)
-  * [Config](#config---set-petsjson-and-settingsjson-locations)
   * [Install](#install---installing-all-dependencies)
+  * [Config](#config---set-petsjson-and-settingsjson-locations)
   * [Build](#build)
 
 ## Preview
@@ -22,16 +22,17 @@ A Pet Adoption App -- ReactNative
 
 # SETUP
 
-## Config - Set pets.json and settings.json locations
-First of all, before anything, please note that the URIs to `pets.json` and `settings.json` are set in:
-```
-/ API_CONFIG.json
-```
 ## Install - Installing all dependencies
 ```
 git clone https://github.com/addyh/pinder.git
 cd pinder
 npm install
+```
+
+## Config - Set pets.json and settings.json locations
+First of all, before anything, please note that the URIs to `pets.json` and `settings.json` are set in:
+```
+/ API_CONFIG.json
 ```
 
 ## Build
