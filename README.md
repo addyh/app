@@ -64,13 +64,15 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **index.js** - main js file
 * **/app/**
   * **/actions/**
+  
     * **petsActions.js** - actions for the `pets` reducer
-      * exports `fetchPets()`
-        * `saveImage()`
-        * `fetchImages()`
-      * exports `addSavedPet()`
+      * exports `fetchPets()` - get the list of pets for the first time
+        * `fetchImages()` - go through each pet image
+        * `saveImage()` - and save it locally, for faster image loading
+      * exports `addSavedPet()` - 
+      
     * **settingsActions.js** - actions for the `settings` reducer
-      * exports `fetchSettings()`
+      * exports `fetchSettings()` - get the user settings for the first time
       * exports `updateProfile()`
       * exports `updateAgeMin()`
       * exports `updateAgeMax()`
@@ -78,7 +80,7 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
     * **types.js**
   * **/components/** - All screens/pages of the app are their own Component
     * **HomeScreen.js** - a container for all pages and the navigation
-    * **NavBarBottom.js** - nav bar at bottom of all pages
+    * **NavBarBottom.js** - the nav bar at the bottom of all pages
     * **PetInfoModal.js** - pet info modal page
     * **SavedScreen.js** - "Saved" Page
     * **SearchScreen.js** - "Search" Page
