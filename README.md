@@ -41,7 +41,9 @@ npm install
 
 * ### With Android Studio
 Start the react native Metro server
+
 `react-native start`
+
 Make sure an Android device is connected or the Android emulator is running, then press the green "Run" (play button) to build and run in Android Studio.
 
 * ### With MacOS, XCode
@@ -49,4 +51,5 @@ Open the iOS project `ios/pinder.xcodeproj` with Xcode. Then press the green "Ru
 
 * ### Build with gradle
 `cd android && ./gradlew assembleRelease`
+
 `cd android && gradlew.bat assembleRelease` on Windows
