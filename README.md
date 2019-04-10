@@ -29,14 +29,11 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 ```
 git clone https://github.com/addyh/pinder.git
 cd ./pinder
-npm install
+npm install && npm install -g react-native-cli
 ```
 ### For Windows / Android dev
 (while in same directory as above, turn on an Android emulator or plug in an android device)
 ```
-npm install -g react-native-cli
-react-native start
-react-native run-android
 ```
 ### For MacOS / iPhone dev
 ```
