@@ -63,7 +63,6 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **API_CONFIG.json** - SET API URLS HERE (pets.json and settings.json)
 * **index.js** - main js file
 * **/app/**
-
   * **/actions/**
     * **petsActions.js** - actions for the `pets` reducer
       * exports `fetchPets()` - get the list of pets for the first time
@@ -110,7 +109,6 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
       * UPDATE_AGE_MIN
       * UPDATE_AGE_MAX
       * UPDATE_TYPE_PREFERENCE
-      
   * **/styles/**
     * **colors.js**
   * **App.js** - main App file
