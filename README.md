@@ -64,12 +64,12 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **index.js** - main js file
 * **/app/**
   * **/actions/**
-    * **petsActions.js**
-      * `saveImage()`
-      * `fetchImages()`
+    * **petsActions.js** - actions for the `pets` reducer
       * exports `fetchPets()`
+        * `saveImage()`
+        * `fetchImages()`
       * exports `addSavedPet()`
-    * **settingsActions.js**
+    * **settingsActions.js** - actions for the `settings` reducer
       * exports `fetchSettings()`
       * exports `updateProfile()`
       * exports `updateAgeMin()`
