@@ -1,5 +1,4 @@
-# Pinder - Pet Version of Tinder
-A Pet Adoption App -- ReactNative
+# Pet Adoption ReactNative App
 
 ## Table of Contents
 * [Preview](#preview)
@@ -31,17 +30,27 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 ```
 git clone https://github.com/addyh/pinder.git
 cd pinder
-npm install && npm install -g react-native-cli
+npm install
 ```
 
-## Build 
-### For Windows / Android dev
-(while in same directory as above, plug in an Android device or rely on emulator)
+## Build
+
+### With React-Native-cli
+
+```
+npm install -g react-native-cli
+```
+
+#### For Windows / Android dev
+(Android device or emulator must be conected for build to succeed.)
 ```
 react-native run-android --variant=release
 ```
-### For MacOS / iPhone dev
-Open the iOS project at `ios/pinder.xcodeproj` with Xcode and simply press the |> Run button
+#### For MacOS / Android dev
+```
+react-native run-android --variant=release
+```
+#### For MacOS / iPhone dev
 ```
 react-native run-ios --configuration Release
 ```
