@@ -35,9 +35,9 @@ npm install
 
 ## Build
 
-* With React-Native-cli  `npm install -g react-native-cli`
-  * For Windows / Android dev `react-native run-android --variant=release`
-  * For MacOS / iPhone dev `react-enative run-ios --configuration Release`
+* #### With React-Native-cli  `npm install -g react-native-cli`
+  * #### For Windows / Android dev `react-native run-android --variant=release`
+  * #### For MacOS / iPhone dev `react-enative run-ios --configuration Release`
 
 * ### With Android Studio
 Start the react native Metro server
