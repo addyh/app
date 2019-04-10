@@ -9,7 +9,7 @@ export default function(state=initialState, action) {
   switch (action.type) {
 
     // Set the src property of a pet object in allPets
-    // given id (payload.i) and path (payload.path)
+    // given index (payload.i) and path (payload.path)
     case types.SET_IMG_SRC:
       let allPets = [...state.allPets];
       allPets[action.payload.i].src = action.payload.path;
