@@ -36,31 +36,21 @@ npm install
 ## Build
 
 * ### With React-Native-cli
-```
-npm install -g react-native-cli
-```
-#### For Windows / Android dev
+`npm install -g react-native-cli`
+* #### For Windows / Android dev
 (Android device or emulator must be conected for build to succeed.)
-```
-react-native run-android --variant=release
-```
-#### For MacOS / iPhone dev
-```
-react-enative run-ios --configuration Release
-```
+`react-native run-android --variant=release`
+* #### For MacOS / iPhone dev
+`react-enative run-ios --configuration Release`
 
 * ### With Android Studio
 Start the react native Metro server
-```
-react-native start
-```
+`react-native start`
 Make sure an Android device is connected or the Android emulator is running, then press the green "Run" (play button) to build and run in Android Studio.
 
 * ### With MacOS, XCode
 Open the iOS project `ios/pinder.xcodeproj` with Xcode. Then press the green "Run" (play button) to build and run in Xcode.
 
 * ### Build with gradle
-```
-cd android && ./gradlew assembleRelease
-```
-```cd android && gradlew.bat assembleRelease``` on Windows
+`cd android && ./gradlew assembleRelease`
+`cd android && gradlew.bat assembleRelease` on Windows
