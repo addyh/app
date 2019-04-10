@@ -65,16 +65,16 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **/app/**
   * **/actions/**
     * **petsActions.js**
-      * saveImage()
-      * fetchImages()
-      * exports fetchPets()
-      * exports addSavedPet()
+      * `saveImage()`
+      * `fetchImages()`
+      * exports `fetchPets()`
+      * exports `addSavedPet()`
     * **settingsActions.js**
-      * exports fetchSettings()
-      * exports updateProfile()
-      * exports updateAgeMin()
-      * exports updateAgeMax()
-      * exports updateTypePreference()
+      * exports `fetchSettings()`
+      * exports `updateProfile()`
+      * exports `updateAgeMin()`
+      * exports `updateAgeMax()`
+      * exports `updateTypePreference()`
     * **types.js**
   * **/components/** - All screens/pages of the app are their own Component
     * **HomeScreen.js** - a container for all pages and the navigation
@@ -86,18 +86,18 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
   * **/reducers/** - contains all Redux reducers
     * **index.js**
     * **petsReducer.js** - update Redux states for pets
-      * state.
-        * allPets
-        * savedPets
+      * `state.`
+        * `allPets`
+        * `savedPets`
       * FETCH_ALL_PETS
       * SET_IMG_SRC
       * ADD_SAVED_PET
     * **settingsReducer.js** - update Redux states for user settings
-      * state.
-        * id
-        * profile
-        * ageRange
-        * typePreference
+      * `state.`
+        * `id`
+        * `profile`
+        * `ageRange`
+        * `typePreference`
       * FETCH_SETTINGS
       * UPDATE_PROFILE
       * UPDATE_AGE_MIN
