@@ -60,20 +60,15 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 # Documentation
 
 * **.env** - build version etc.
-
 * **API_CONFIG.json** - SET API URLS HERE (pets.json and settings.json)
-
 * **index.js** - main js file
-
 * **/app/**
 
   * **/actions/**
-  
     * **petsActions.js** - actions for the `pets` reducer
       * exports `fetchPets()` - get the list of pets for the first time
         * `fetchImages()` - go through each pet image
         * `saveImage()` - and save it locally, for faster image loading
-        
       * exports `addSavedPet()` - 
       
     * **settingsActions.js** - actions for the `settings` reducer
@@ -95,7 +90,7 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
   * **/reducers/** - contains all Redux reducers
   
     * **index.js**
-    
+
     * **petsReducer.js** - update Redux states for `pets`
       * `state.pets.`
         * `allPets`
