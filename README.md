@@ -1,12 +1,13 @@
-# Pet Adoption ReactNative App
+# Pinder - Pet Version of Tinder
+A Pet Adoption App -- ReactNative
 
 ## Table of Contents
 * [Preview](#preview)
   * [Android](#android)
   * [iPhone](#iphone)
 * [SETUP](#setup)
-  * [Config](#config)
-  * [Install](#install)
+  * [Config](#config---set-petsjson-and-settingsjson-locations)
+  * [Install](#install---installation-all-dependencies)
   * [Build](#build)
 
 ## Preview
