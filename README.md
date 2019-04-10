@@ -12,6 +12,7 @@
 
 ### Android
 [Download on Google Play](https://play.google.com/store/apps/details?id=com.addisonhatcher.pinder)
+
 <img src="./images/screenshot1.jpg" width="210" /> <img src="./images/screenshot2.jpg" width="210" /> <img src="./images/screenshot3.jpg" width="210" /> <img src="./images/screenshot4.jpg" width="210" />
 
 ### iPhone
