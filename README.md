@@ -44,10 +44,6 @@ npm install -g react-native-cli
 ```
 react-native run-android --variant=release
 ```
-#### For MacOS / Android dev
-```
-react-native run-android --variant=release
-```
 #### For MacOS / iPhone dev
 ```
 react-enative run-ios --configuration Release
@@ -61,6 +57,10 @@ react-native start
 Make sure an Android device is connected or the Android emulator is running, then press the green "Run" (play button) to build and run in Android Studio.
 
 ### With MacOS, XCode
-Open the iOS project `ios/pinder.xcodeproj` with Xcode. Simply 
+Open the iOS project `ios/pinder.xcodeproj` with Xcode. Then press the green "Run" (play button) to build and run in Xcode.
 
 ### Build with gradle
+```
+cd android && ./gradlew assembleRelease
+```
+```cd android && gradlew.bat assembleRelease``` on Windows
