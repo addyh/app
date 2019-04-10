@@ -52,3 +52,4 @@ npm install
 * #### Build with gradle
   * #### `cd android && ./gradlew assembleRelease`
   * #### `cd android && gradlew.bat assembleRelease` on Windows
+  * #### The apk will be saved to `./android/app/build/outputs/apk/app-release.apk`
