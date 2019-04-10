@@ -41,7 +41,7 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 
 * #### With React-Native-cli:  `npm install -g react-native-cli`
   * #### For Windows / Android dev:  `react-native run-android --variant=release`
-  * #### For MacOS / iPhone dev:  `react-enative run-ios --configuration Release`
+  * #### For MacOS / iPhone dev:  `react-native run-ios --configuration Release`
 
 * #### Build With Android Studio
   * #### Start the react native Metro server: `react-native start`
