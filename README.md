@@ -59,9 +59,9 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 
 # Documentation
 
-* **.env**
-* **API_CONFIG.json**
-* **index.js**
+* **.env** - build version etc.
+* **API_CONFIG.json** - SET API URLS HERE (pets.json and settings.json)
+* **index.js** - main js file
 * **/app/**
   * **/actions/**
     * **petsActions.js**
@@ -74,11 +74,19 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
     * **SavedScreen.js**
     * **SearchScreen.js**
     * **SettingsScreen.js**
-  * **/reducers/**
+  * **/reducers/** - contains all Redux reducers
     * **index.js**
-    * **petsReducer.js**
-    * **settingsReducer.js**
+    * **petsReducer.js** - update Redux states for allPets and savedPets
+      * FETCH_ALL_PETS
+      * SET_IMG_SRC
+      * ADD_SAVED_PET
+    * **settingsReducer.js** - update Redux states for user settings
+      * FETCH_SETTINGS
+      * UPDATE_PROFILE
+      * UPDATE_AGE_MIN
+      * UPDATE_AGE_MAX
+      * UPDATE_TYPE_PREFERENCE
   * **/styles/**
     * **colors.js**
-  * **App.js**
-  * **store.js**
+  * **App.js** - main App file
+  * **store.js** - Redux store file
