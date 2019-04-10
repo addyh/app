@@ -11,7 +11,6 @@ const saveImage = (i, img, dispatch) => {
   .fetch('GET', img)
   .then((res) => {
     let path = Platform.OS === 'android' ? 'file://' + res.path() : '' + res.path();
-    console.log(i, path);
     dispatch({
       type: types.SET_IMG_SRC,
       payload: {i, path}
