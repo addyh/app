@@ -64,12 +64,12 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 * **index.js** - (main js file
 * **/app/**
   * **/actions/**
-    * **petsActions.js** - (actions for the `pets` reducer)
+    * **petsActions.js** - (actions for the petsReducer)
       * exports `fetchPets()` - (get the list of pets for the first time)
         * `fetchImages()` - (go through each pet image)
         * `saveImage()` - (and save it locally, for faster image loading)
-      * exports `addSavedPet()` - 
-    * **settingsActions.js** - (actions for the `settings` reducer)
+      * exports `addSavedPet()` - (user swiped right on a pet)
+    * **settingsActions.js** - (actions for the settingsReducer)
       * exports `fetchSettings()` - (get the user settings for the first time)
       * exports `updateProfile()`
       * exports `updateAgeMin()`
@@ -85,11 +85,11 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
     * **SettingsScreen.js** - ("Settings" Page)
   * **/reducers/**
     * **index.js**
-    * **petsReducer.js** - (update Redux states for `pets`)
+    * **petsReducer.js**
       * FETCH_ALL_PETS (get `state.pets.allPets`)
       * SET_IMG_SRC (create property `state.pets.allPets[n].src` -- a local copy of the image file)
       * ADD_SAVED_PET (add a pet to `state.pets.savedPets`)
-    * **settingsReducer.js** - (update Redux states for `settings`)
+    * **settingsReducer.js**
       * FETCH_SETTINGS - (get `state.settings`)
       * UPDATE_PROFILE - (update `state.settings.profile`)
       * UPDATE_AGE_MIN - (update `state.settings.age.min`)
