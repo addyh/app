@@ -59,51 +59,46 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
 
 # Documentation
 
-* **.env** - build version etc.
+* **.env** - (build version etc.
 * **API_CONFIG.json** - SET API URLS HERE (pets.json and settings.json)
-* **index.js** - main js file
+* **index.js** - (main js file
 * **/app/**
   * **/actions/**
-    * **petsActions.js** - actions for the `pets` reducer
-      * exports `fetchPets()` - get the list of pets for the first time
-        * `fetchImages()` - go through each pet image
-        * `saveImage()` - and save it locally, for faster image loading
+    * **petsActions.js** - (actions for the `pets` reducer)
+      * exports `fetchPets()` - (get the list of pets for the first time)
+        * `fetchImages()` - (go through each pet image)
+        * `saveImage()` - (and save it locally, for faster image loading)
       * exports `addSavedPet()` - 
-    * **settingsActions.js** - actions for the `settings` reducer
-      * exports `fetchSettings()` - get the user settings for the first time
+    * **settingsActions.js** - (actions for the `settings` reducer)
+      * exports `fetchSettings()` - (get the user settings for the first time)
       * exports `updateProfile()`
       * exports `updateAgeMin()`
       * exports `updateAgeMax()`
       * exports `updateTypePreference()`
     * **types.js**
   * **/components/** - All screens/pages of the app are their own Component
-    * **HomeScreen.js** - a container for all pages and the navigation
-    * **NavBarBottom.js** - the nav bar at the bottom of all pages
-    * **PetInfoModal.js** - pet info modal page
-    * **SavedScreen.js** - "Saved" Page
-    * **SearchScreen.js** - "Search" Page
-    * **SettingsScreen.js** - "Settings" Page
-  * **/reducers/** - contains all Redux reducers
+    * **HomeScreen.js** - (a container for all pages and the navigation)
+    * **NavBarBottom.js** - (the nav bar at the bottom of all pages)
+    * **PetInfoModal.js** - (pet info modal page)
+    * **SavedScreen.js** - ("Saved" Page)
+    * **SearchScreen.js** - ("Search" Page)
+    * **SettingsScreen.js** - ("Settings" Page)
+  * **/reducers/**
     * **index.js**
-    * **petsReducer.js** - update Redux states for `pets`
+    * **petsReducer.js** - (update Redux states for `pets`)
       * `state.pets.`
         * `allPets`
         * `savedPets`
       * FETCH_ALL_PETS
       * SET_IMG_SRC
       * ADD_SAVED_PET
-    * **settingsReducer.js** - update Redux states for `settings`
-      * `state.settings.`
-        * `id`
-        * `profile`
-        * `ageRange`
-        * `typePreference`
-      * FETCH_SETTINGS
-      * UPDATE_PROFILE
-      * UPDATE_AGE_MIN
-      * UPDATE_AGE_MAX
-      * UPDATE_TYPE_PREFERENCE
+    * **settingsReducer.js** - (update Redux states for `settings`)
+      * FETCH_SETTINGS - (get `state.settings`)
+      * UPDATE_PROFILE - (update `state.settings.profile`)
+      * UPDATE_AGE_MIN - (update `state.settings.age.min`)
+      * UPDATE_AGE_MAX - (update `state.settings.age.max`)
+      * UPDATE_TYPE_PREFERENCE - (update `state.settings.typePreference`)
   * **/styles/**
     * **colors.js**
-  * **App.js** - main App file
-  * **store.js** - Redux store file
+  * **App.js** - (main App file)
+  * **store.js** - (Redux store file)
