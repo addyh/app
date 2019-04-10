@@ -71,10 +71,10 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
       * exports `addSavedPet()` - (user swiped right on a pet)
     * **settingsActions.js**
       * exports `fetchSettings()` - (get the user settings for the first time)
-      * exports `updateProfile()`
-      * exports `updateAgeMin()`
-      * exports `updateAgeMax()`
-      * exports `updateTypePreference()`
+      * exports `updateProfile()`- (dispatch to update settings state)
+      * exports `updateAgeMin()`- (dispatch to update settings state)
+      * exports `updateAgeMax()`- (dispatch to update settings state)
+      * exports `updateTypePreference()`- (dispatch to update settings state)
     * **types.js**
   * **/components/** - All screens/pages of the app are their own Component
     * **HomeScreen.js** - (a container for all pages and the navigation)
