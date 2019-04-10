@@ -67,16 +67,16 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
     * **petsActions.js**
     * **settingsActions.js**
     * **types.js**
-  * **/components/**
-    * **HomeScreen.js**
-    * **NavBarBottom.js**
-    * **PetInfoModal.js**
-    * **SavedScreen.js**
-    * **SearchScreen.js**
-    * **SettingsScreen.js**
+  * **/components/** - All screens/pages of the app are their own Component
+    * **HomeScreen.js** - a container for all pages and the navigation
+    * **NavBarBottom.js** - nav bar at bottom of all pages
+    * **PetInfoModal.js** - pet info modal page
+    * **SavedScreen.js** - "Saved" Page
+    * **SearchScreen.js** - "Search" Page
+    * **SettingsScreen.js** - "Settings" Page
   * **/reducers/** - contains all Redux reducers
     * **index.js**
-    * **petsReducer.js** - update Redux states for allPets and savedPets
+    * **petsReducer.js** - update Redux states for pets (`allPets` and `savedPets`)
       * FETCH_ALL_PETS
       * SET_IMG_SRC
       * ADD_SAVED_PET
