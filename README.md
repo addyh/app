@@ -35,12 +35,12 @@ npm install && npm install -g react-native-cli
 
 ## Build 
 ### For Windows / Android dev
-(while in same directory as above, turn on an Android emulator or plug in an android device)
+(while in same directory as above, plug in an Android device or rely on emulator)
 ```
 react-native run-android --variant=release
 ```
 ### For MacOS / iPhone dev
-Open the iOS project at `ios/pinder.xcodeproj` with Xcode
+Open the iOS project at `ios/pinder.xcodeproj` with Xcode and simply press the |> Run button
 ```
 react-native run-ios --configuration Release
 ```
