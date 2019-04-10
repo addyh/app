@@ -85,15 +85,15 @@ First of all, before anything, please note that the URIs to `pets.json` and `set
     * **SettingsScreen.js** - "Settings" Page
   * **/reducers/** - contains all Redux reducers
     * **index.js**
-    * **petsReducer.js** - update Redux states for pets
-      * `state.`
+    * **petsReducer.js** - update Redux states for `pets`
+      * `state.pets.`
         * `allPets`
         * `savedPets`
       * FETCH_ALL_PETS
       * SET_IMG_SRC
       * ADD_SAVED_PET
-    * **settingsReducer.js** - update Redux states for user settings
-      * `state.`
+    * **settingsReducer.js** - update Redux states for `settings`
+      * `state.settings.`
         * `id`
         * `profile`
         * `ageRange`
