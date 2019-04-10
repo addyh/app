@@ -19,7 +19,7 @@
 # SETUP
 
 ### Config
-First of all, before anything, please note that the URIs to `pets.json` and `settings.json` need to be set in:
+First of all, before anything, please note that the URIs to `pets.json` and `settings.json` are set in:
 ```
 / API_CONFIG.json
 ```
